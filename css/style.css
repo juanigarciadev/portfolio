@@ -29,7 +29,10 @@
   color: #d500ff; }
 
 :root {
-  --corporativeColor: #b600ff; }
+  --corporativeColor: #9A48D0;
+  --darkCorporativeColor: #7903a7;
+  --lightCorporativeColor: #cb46ff;
+  --secondCorporativeColor: #2ae685; }
 
 * {
   padding: 0;
@@ -37,11 +40,19 @@
   box-sizing: border-box;
   font-family: sans-serif; }
 
+::selection {
+  background-color: var(--secondCorporativeColor); }
+
 .paddingBottom {
   padding-bottom: 20px; }
 
 .highlightedText {
   color: var(--corporativeColor); }
+
+.noStyleAnchor {
+  color: inherit; }
+  .noStyleAnchor:hover {
+    color: var(--lightCorporativeColor); }
 
 body {
   color: white;

@@ -1,5 +1,8 @@
 :root {
-  --corporativeColor: #b600ff;
+  --corporativeColor: #9A48D0;
+  --darkCorporativeColor: #7903a7;
+  --lightCorporativeColor: #cb46ff;
+  --secondCorporativeColor: #2ae685;
 }
 
 * {
@@ -9,10 +12,21 @@
   font-family: sans-serif;
 }
 
+::selection {
+  background-color: var(--secondCorporativeColor);
+}
+
 .paddingBottom {
-    padding-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .highlightedText {
   color: var(--corporativeColor);
+}
+
+.noStyleAnchor {
+  color: inherit;
+  &:hover {
+    color: var(--lightCorporativeColor);
+  }
 }
