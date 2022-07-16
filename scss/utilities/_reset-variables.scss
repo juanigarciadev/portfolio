@@ -1,0 +1,18 @@
+:root {
+  --corporativeColor: #b600ff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.paddingBottom {
+    padding-bottom: 20px;
+}
+
+.highlightedText {
+  color: var(--corporativeColor);
+}

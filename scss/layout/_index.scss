@@ -1,0 +1,45 @@
+body {
+  color: white;
+  background-color: #181818;
+  overflow-x: hidden;
+}
+
+.main {
+  margin-top: 70px;
+  height: 2000px;
+}
+
+h1 {
+  display: none;
+}
+
+.contactBarContainer {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+}
+
+.inicio {
+    display: flex;
+    justify-content: center;
+}
+
+.inicio-texto {
+  h3 {
+    font-size: 16px;
+  }
+}
+
+.home {
+  position: relative;
+  .homeBackground {
+    width: 100vw;
+    min-width: 100vw;
+  }
+  .homeTitle {
+    position: absolute;
+    top: 40%;
+    right: 10%;
+    max-width: 20%;
+  }
+}

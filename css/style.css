@@ -1,0 +1,79 @@
+.navbar {
+  background-color: #202020;
+  width: 100vw; }
+  .navbar .nav-link {
+    color: white;
+    font-weight: 600;
+    font-size: 16px; }
+    .navbar .nav-link:hover {
+      text-decoration: underline;
+      text-decoration-color: purple;
+      text-decoration-thickness: 3px; }
+
+.navbar-brand {
+  color: white;
+  padding-left: 20px;
+  z-index: 100; }
+  .navbar-brand:hover {
+    transform: scale(0.98);
+    transition: 0.3s;
+    color: #adadad; }
+
+.navbar-nav {
+  gap: 40px; }
+
+.navbar-toggler {
+  background-color: white; }
+
+.paginaSeleccionda {
+  color: #d500ff; }
+
+:root {
+  --corporativeColor: #b600ff; }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif; }
+
+.paddingBottom {
+  padding-bottom: 20px; }
+
+.highlightedText {
+  color: var(--corporativeColor); }
+
+body {
+  color: white;
+  background-color: #181818;
+  overflow-x: hidden; }
+
+.main {
+  margin-top: 70px;
+  height: 2000px; }
+
+h1 {
+  display: none; }
+
+.contactBarContainer {
+  display: flex;
+  flex-direction: column;
+  position: fixed; }
+
+.inicio {
+  display: flex;
+  justify-content: center; }
+
+.inicio-texto h3 {
+  font-size: 16px; }
+
+.home {
+  position: relative; }
+  .home .homeBackground {
+    width: 100vw;
+    min-width: 100vw; }
+  .home .homeTitle {
+    position: absolute;
+    top: 40%;
+    right: 10%;
+    max-width: 20%; }
