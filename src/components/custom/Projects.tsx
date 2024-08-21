@@ -78,7 +78,7 @@ const PROJECTS = [
 const Projects = () => {
     return (
         <div className="flex flex-col bg-main gap-16 w-full px-96 xl:px-16 lg:px-8 sm:px-2">
-            <h2 className="text-6xl text-center font-semibold tracking-wide">
+            <h2 className="text-6xl text-center font-semibold tracking-wide md:text-2xl">
                 My <span className="text-corporative">featured</span> projects
             </h2>
             <div className="grid grid-cols-2 gap-8 lg:flex lg:flex-col">
@@ -86,8 +86,8 @@ const Projects = () => {
                     <article key={name} className="flex flex-col w-full h-auto bg-light border border-cardBorder rounded-lg gap-4 p-8 shadow-md shadow-[#312E81]">
                         <img className="rounded-lg w-full" src={imageUrl} alt={`Screenshot of ${name}`} />
                         <div className="flex flex-col gap-4">
-                            <h3 className="text-3xl text-corporative font-semibold">{name}</h3>
-                            <p className="flex flex-wrap">{description}</p>
+                            <h3 className="text-3xl text-corporative font-semibold md:text-xl">{name}</h3>
+                            <p className="flex flex-wrap md:text-xs">{description}</p>
                             <div className="flex -space-x-2">
                                 {technologies.map((technologie) => (
                                     <article key={technologie.name} className="rounded-full bg-gradient-to-tl from-[#080C29] to-[#000319] border border-cardBorder p-1.5">
@@ -96,10 +96,10 @@ const Projects = () => {
                                 ))}
                             </div>
                             <div className="flex gap-4 items-center sm:flex-col">
-                                <a className="font-semibold border border-cardBorder px-8 py-2 rounded hover:bg-main transition-all sm:w-full sm:text-center" href={repository} target="_blank">
+                                <a className="font-semibold border border-cardBorder px-8 py-2 rounded hover:bg-main transition-all md:text-xs sm:w-full sm:text-center" href={repository} target="_blank">
                                     Visit Repository
                                 </a>
-                                <a className="text-corporativeDark font-semibold bg-corporative border border-cardBorder px-8 py-2 rounded hover:bg-corporativeDark transition-all hover:text-corporativeLight sm:w-full sm:text-center" href={websiteUrl} target="_blank">
+                                <a className="text-corporativeDark font-semibold bg-corporative border border-cardBorder px-8 py-2 rounded hover:bg-corporativeDark transition-all hover:text-corporativeLight md:text-xs sm:w-full sm:text-center" href={websiteUrl} target="_blank">
                                     Open Live Site
                                 </a>
                             </div>
