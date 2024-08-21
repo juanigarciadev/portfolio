@@ -77,11 +77,11 @@ const PROJECTS = [
 
 const Projects = () => {
     return (
-        <div className="flex flex-col bg-main gap-16 w-full px-96">
+        <div className="flex flex-col bg-main gap-16 w-full px-96 xl:px-16 lg:px-8 sm:px-2">
             <h2 className="text-6xl text-center font-semibold tracking-wide">
                 My <span className="text-corporative">featured</span> projects
             </h2>
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-2 gap-8 lg:flex lg:flex-col">
                 {PROJECTS.map(({ name, description, technologies, imageUrl, repository, websiteUrl }) => (
                     <article key={name} className="flex flex-col w-full h-auto bg-light border border-cardBorder rounded-lg gap-4 p-8 shadow-md shadow-[#312E81]">
                         <img className="rounded-lg w-full" src={imageUrl} alt={`Screenshot of ${name}`} />
@@ -95,11 +95,11 @@ const Projects = () => {
                                     </article>
                                 ))}
                             </div>
-                            <div className="flex gap-4 items-center">
-                                <a className="font-semibold border border-cardBorder px-8 py-2 rounded hover:bg-main transition-all" href={repository} target="_blank">
+                            <div className="flex gap-4 items-center sm:flex-col">
+                                <a className="font-semibold border border-cardBorder px-8 py-2 rounded hover:bg-main transition-all sm:w-full sm:text-center" href={repository} target="_blank">
                                     Visit Repository
                                 </a>
-                                <a className="text-corporativeDark font-semibold bg-corporative border border-cardBorder px-8 py-2 rounded hover:bg-corporativeDark transition-all hover:text-corporativeLight" href={websiteUrl} target="_blank">
+                                <a className="text-corporativeDark font-semibold bg-corporative border border-cardBorder px-8 py-2 rounded hover:bg-corporativeDark transition-all hover:text-corporativeLight sm:w-full sm:text-center" href={websiteUrl} target="_blank">
                                     Open Live Site
                                 </a>
                             </div>

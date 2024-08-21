@@ -7,7 +7,7 @@ import Mail from "../icons/Mail";
 const Contact = () => {
     const [copy, setCopy] = useState(false);
     return (
-        <section className="relative flex flex-col gap-8 w-full py-64">
+        <section className="relative flex flex-col gap-8 w-full py-64 xl:px-16 lg:px-8 sm:px-2">
             <h3 className="text-6xl text-center font-semibold tracking-wide">
                 Ready to <span className="text-corporative">work</span> with me?
             </h3>

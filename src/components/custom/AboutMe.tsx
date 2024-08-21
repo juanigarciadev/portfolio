@@ -31,17 +31,17 @@ const AboutMe = () => {
     ];
     return (
         <AuroraBackground>
-            <div className="relative flex flex-col justify-center items-center gap-6 px-96 w-full py-64 ">
+            <div className="relative flex flex-col justify-center items-center gap-6 px-96 w-full py-64 xl:px-16 lg:px-8 sm:px-2">
                 <span className="z-10 text-xs tracking-widest">EVERYTHING, MADE WITH LOVE</span>
                 <TextGenerateEffect className="w-full h-full z-10 text-center font-semibold tracking-wide" words="Original and modern design at your fingertips." />
                 {/* <h1 className="z-10 text-6xl text-center font-semibold tracking-wide">
                 <span className="text-corporative">Original</span> and <span className="text-corporative">modern</span> design at your fingertips.
             </h1> */}
-                <p className="z-10 text-xl tracking-wider">Hey! I'm Juani, a Frontend Developer born and raised in Argentina.</p>
-                <div className="z-10 flex gap-2 pt-8">
+                <p className="z-10 text-xl tracking-wider sm:text-center px-8">Hey! I'm Juani, a Frontend Developer born and raised in Argentina.</p>
+                <div className="z-10 flex gap-2 pt-8 md:flex-col md:items-center">
                     {SOCIALS.map((social) => {
                         return (
-                            <a href={social.url} key={social.title} target="_blank" className="flex items-center gap-2 font-semibold w-fit border border-cardBorder bg-black rounded px-8 py-2 hover:bg-light transition-all">
+                            <a href={social.url} key={social.title} target="_blank" className="flex items-center gap-2 font-semibold w-fit border border-cardBorder bg-black rounded px-8 py-2 hover:bg-light transition-all md:w-full md:justify-center">
                                 <social.icon className="size-4" />
                                 {social.title}
                             </a>
