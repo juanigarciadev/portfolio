@@ -24,7 +24,7 @@ const Footer = () => {
         {
             title: 'Contact me',
             icon: Mail,
-            url: 'https://github.com/juanigarciadev',
+            url: 'mailto:juanigarciadev@gmail.com',
         },
     ]
     return (
