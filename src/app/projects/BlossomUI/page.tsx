@@ -2,7 +2,7 @@ import CubeIcon from '../../../components/icons/Cube'
 
 export default function BlossomUI() {
     return(
-        <main className="flex flex-col bg-main gap-16 w-full px-96 mt-12 xl:px-16 lg:px-8 sm:px-2">
+        <main className="flex flex-col bg-main gap-16 w-full px-96 mt-28 xl:px-16 lg:px-8 sm:px-2">
             <div className="h-96 w-full rounded bg-cover bg-[url('https://res.cloudinary.com/diruiumfk/image/upload/v1724003620/blossomui_wcxsqc.png')] hover:bg-bottom hover:duration-1000 [&:not(:hover)]:bg-top [&:not(:hover)]:duration-1000">
             </div>
             <section className="flex flex-col gap-4">

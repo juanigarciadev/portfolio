@@ -78,7 +78,7 @@ const PROJECTS = [
 
 const Projects = () => {
     return (
-        <div className="flex flex-col bg-main gap-16 w-full px-96 xl:px-16 lg:px-8 sm:px-2">
+        <div className="flex flex-col bg-main gap-16 w-full px-96 xl:px-16 lg:px-8 sm:px-2" id="work">
             <h2 className="text-6xl text-center font-semibold tracking-wide md:text-2xl">
                 My <span className="text-corporative">featured</span> projects
             </h2>

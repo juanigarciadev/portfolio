@@ -30,7 +30,7 @@ const AboutMe = () => {
         },
     ];
     return (
-        <AuroraBackground>
+        <AuroraBackground id="aboutMe">
             <div className="relative flex flex-col justify-center items-center gap-6 px-96 w-full py-64 xl:px-16 lg:px-8 md:gap-4 sm:px-2">
             <div className="hidden absolute bottom-0 left-0 right-0 -top-12 bg-[linear-gradient(to_right,#03082b_1px,transparent_1px),linear-gradient(to_bottom,#03082b_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] md:block"></div>
                 <span className="z-10 text-xs tracking-widest">EVERYTHING, MADE WITH LOVE</span>
