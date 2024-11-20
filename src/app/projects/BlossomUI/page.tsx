@@ -1,8 +1,11 @@
+import Link from 'next/link'
 import CubeIcon from '../../../components/icons/Cube'
+import ArrowLeft from '../../../components/icons/ArrowLeft'
 
 export default function BlossomUI() {
     return(
         <main className="flex flex-col bg-main gap-16 w-full px-96 mt-28 xl:px-16 lg:px-8 sm:px-2">
+            <Link href={'/'} className='inline-flex items-center gap-2 font-semibold w-fit border border-cardBorder px-8 py-2 rounded hover:bg-light transition-all 2xl:text-xs 2xl:w-full 2xl:text-center lg:p-4'><ArrowLeft/>Return to home</Link>
             <div className="h-96 w-full rounded bg-cover bg-[url('https://res.cloudinary.com/diruiumfk/image/upload/v1724003620/blossomui_wcxsqc.png')] hover:bg-bottom hover:duration-1000 [&:not(:hover)]:bg-top [&:not(:hover)]:duration-1000">
             </div>
             <section className="flex flex-col gap-4">
