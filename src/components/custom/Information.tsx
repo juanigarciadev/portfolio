@@ -52,13 +52,14 @@ const Information = () => {
                             </div>
                             <div className="flex flex-col gap-4 rounded border border-cardBorder bg-light relative p-4">
                                 <span className="text-wrap text-3xl font-semibold tracking-wide md:text-2xl">Main stack</span>
-                                <div className="flex items-end flex-wrap gap-2">
+                                <img src="https://res.cloudinary.com/diruiumfk/image/upload/v1732069165/stack_xlwn3o.png" alt="technologies stack" />
+                                {/* <div className="flex items-end flex-wrap gap-2">
                                     <span className="inline-flex items-center gap-2 bg-main border border-cardBorder w-fit px-4 py-2 rounded"><ReactJS className='size-4'/> ReactJS</span>
                                     <span className="inline-flex items-center gap-2 bg-main border border-cardBorder w-fit px-4 py-2 rounded"><NextJs className='size-4'/>Next.js</span>
                                     <span className="inline-flex items-center gap-2 bg-main border border-cardBorder w-fit px-4 py-2 rounded"><Tailwind className='size-4'/>Tailwind</span>
                                     <span className="inline-flex items-center gap-2 bg-main border border-cardBorder w-fit px-4 py-2 rounded"><AstroIcon className='size-4'/>Astro</span>
                                     <span className="inline-flex items-center gap-2 bg-main border border-cardBorder w-fit px-4 py-2 rounded"><Javascript className='size-4'/>JavaScript</span>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
