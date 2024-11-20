@@ -9,8 +9,15 @@ import NextJs from "../icons/NextJs";
 
 const Information = () => {
     return(
-        <div className="flex flex-col bg-main gap-16 w-full px-96 xl:px-16 lg:px-8 sm:px-2 h-auto" id="information">
+        <div className="flex flex-col bg-main gap-16 w-full px-96 xl:px-16 lg:px-8 md:pb-32 sm:px-2 h-auto" id="information">
             <div className="hidden md:grid md:flex-col gap-4">
+                <div className="inline-flex items-center w-full h-[292px] rounded border border-cardBorder bg-light p-4">
+                    <div className="flex flex-col gap-2">
+                        <span className="z-10 text-xs tracking-widest">MORE ABOUT ME</span>
+                        <span className="text-wrap text-3xl font-semibold tracking-wide md:text-2xl">Curious and creative front-end developer focused in creating useful, fun and friendly experiences.
+                        </span>
+                    </div>
+                </div>
                 <div className="w-full h-[292px] rounded border border-cardBorder bg-light">
                     <div className="flex flex-col h-full gap-4 w-full rounded bg-light p-4 bg-no-repeat bg-[bottom_-5rem_right_-10rem] bg-contain bg-[url('https://res.cloudinary.com/diruiumfk/image/upload/v1732063669/components_d52jfz.png')]">
                         <div className="flex flex-col gap-2">
@@ -20,16 +27,20 @@ const Information = () => {
                             <Link href='/projects/BlossomUI' className="flex items-center gap-2 font-semibold w-fit border border-cardBorder bg-black rounded px-8 py-2 hover:bg-light transition-all md:text-xs md:w-full md:justify-center">More information</Link>
                     </div>
                 </div>
-                <div className="w-full h-[292px] rounded border border-cardBorder bg-light"></div>
-                <div className="w-full h-[292px] rounded border border-cardBorder bg-light"></div>
-                <div className="w-full h-[292px] rounded border border-cardBorder bg-light"></div>
-                <div className="w-full h-[292px] rounded border border-cardBorder bg-light"></div>
-                <div className="inline-flex items-center w-full h-[292px] rounded border border-cardBorder bg-light p-4">
-                    <div className="flex flex-col gap-2">
-                        <span className="z-10 text-xs tracking-widest">MORE ABOUT ME</span>
-                        <span className="text-wrap text-3xl font-semibold tracking-wide md:text-2xl">Curious and creative front-end developer focused in creating useful, fun and friendly experiences.
-                        </span>
+                <Link href={'https://github.com/juanigarciadev'} target="_blank" className="group flex items-center justify-center cursor-pointer w-full h-[292px] rounded border border-cardBorder bg-light hover:bg-main ">
+                    <Github className='size-32 group-hover:size-28 duration-100'/>
+                </Link>
+                <div className="inline-flex items-center justify-center w-full h-[292px] rounded border border-cardBorder bg-light">
+                    <img className="rounded w-40" src="https://res.cloudinary.com/diruiumfk/image/upload/v1732068941/Flag_of_Argentina.svg_m9olkc.png" alt="argentinian flag" />
+                </div>
+                <div className="w-full h-[292px] rounded border border-cardBorder bg-light p-4">
+                    <span className="text-wrap text-3xl font-semibold tracking-wide md:text-2xl">Main stack</span>
+                    <div className="w-full h-full flex items-center justify-center">
+                        <img src="https://res.cloudinary.com/diruiumfk/image/upload/v1732069165/stack_xlwn3o.png" alt="technologies stack" />
                     </div>
+                </div>
+                <div className="w-full h-[292px] rounded border border-cardBorder bg-light bg-[bottom_-5rem_right_-10rem] bg-contain bg-no-repeat bg-[url('https://res.cloudinary.com/diruiumfk/image/upload/v1732066935/blossomuibackground_lcnotm.png')] p-4 sm:bg-[bottom_-7rem_left_2rem] xs:bg-[bottom_1rem_right_-5rem]">
+                    <span className="text-wrap text-3xl font-semibold tracking-wide md:text-2xl">Always improving to make stunning sites.</span>
                 </div>
             </div>
 
