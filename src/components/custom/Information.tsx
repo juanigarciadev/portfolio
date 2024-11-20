@@ -9,7 +9,7 @@ import NextJs from "../icons/NextJs";
 
 const Information = () => {
     return(
-        <div className="flex flex-col bg-main gap-16 w-full px-96 xl:px-16 lg:px-8 md:pb-32 sm:px-2 h-auto" id="information">
+        <div className="flex flex-col bg-main gap-16 w-full px-96 xl:px-16 lg:px-8 md:pb-32 sm:px-2 h-auto" id="aboutMe">
             <div className="hidden md:grid md:flex-col gap-4">
                 <div className="inline-flex items-center w-full h-[292px] rounded border border-cardBorder bg-light p-4">
                     <div className="flex flex-col gap-2">
