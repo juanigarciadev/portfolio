@@ -6,6 +6,7 @@ import Tailwind from "../icons/Tailwind";
 import AstroIcon from "../icons/AstroIcon";
 import Javascript from "../icons/Javascript";
 import NextJs from "../icons/NextJs";
+import ArrowLeft from "../icons/ArrowLeft";
 
 const Information = () => {
     return(
@@ -27,8 +28,11 @@ const Information = () => {
                             <Link href='/projects/BlossomUI' className="flex items-center gap-2 font-semibold w-fit border border-cardBorder bg-black rounded px-8 py-2 hover:bg-light transition-all md:text-xs md:w-full md:justify-center">More information</Link>
                     </div>
                 </div>
-                <Link href={'https://github.com/juanigarciadev'} target="_blank" className="group flex items-center justify-center cursor-pointer w-full h-[292px] rounded border border-cardBorder bg-light hover:bg-main ">
+                <Link href={'https://github.com/juanigarciadev'} target="_blank" className="relative group flex items-center justify-center cursor-pointer w-full h-[292px] rounded border border-cardBorder bg-light hover:bg-main ">
                     <Github className='size-32 group-hover:size-28 duration-100'/>
+                    <div className="absolute bg-black right-3 bottom-3 bg-opacity-80 border border-cardBorder p-2 rounded-lg cursor-pointer group-hover:bg-light transition-all">
+                            <ArrowLeft className='rotate-[135deg]'/>
+                        </div>
                 </Link>
                 <div className="inline-flex items-center justify-center w-full h-[292px] rounded border border-cardBorder bg-light">
                     <img className="rounded w-40" src="https://res.cloudinary.com/diruiumfk/image/upload/v1732068941/Flag_of_Argentina.svg_m9olkc.png" alt="argentinian flag" />
@@ -83,8 +87,11 @@ const Information = () => {
                             </span>
                         </div>
                     </div>
-                    <Link href={'https://github.com/juanigarciadev'} target="_blank" className="group flex items-center justify-center rounded border border-cardBorder bg-light cursor-pointer hover:bg-main">
+                    <Link href={'https://github.com/juanigarciadev'} target="_blank" className="relative group flex items-center justify-center rounded border border-cardBorder bg-light cursor-pointer hover:bg-main">
                         <Github className='size-32 group-hover:size-28 duration-100'/>
+                        <div className="absolute bg-black right-3 bottom-3 bg-opacity-80 border border-cardBorder p-2 rounded-lg cursor-pointer group-hover:bg-light transition-all">
+                            <ArrowLeft className='rotate-[135deg]'/>
+                        </div>
                     </Link>
                 </div>
             </div>
