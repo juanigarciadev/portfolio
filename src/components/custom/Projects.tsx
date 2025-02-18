@@ -87,7 +87,7 @@ const Projects = () => {
             <h2 className="text-6xl text-center font-semibold tracking-wide md:text-2xl">
                 My <span className="text-corporative">featured</span> projects
             </h2>
-            <div className="flex flex-col gap-8">
+            <div className="grid grid-cols-2 gap-8 2xl:flex 2xl:flex-col">
                 {PROJECTS.map(({ name, description, technologies, imageUrl, projectInfo, websiteUrl }) => (
                     <article key={name} className="flex flex-col w-full h-auto bg-light border border-cardBorder rounded-lg gap-4 p-8">
                         <img className="rounded-lg w-full" src={imageUrl} alt={`Screenshot of ${name}`} />
