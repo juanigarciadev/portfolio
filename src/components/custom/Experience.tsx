@@ -15,7 +15,7 @@ const Experience = () => {
                     <a href="https://grupobroda.com/" target="_blank" className="text-3xl text-corporative font-semibold md:text-xl hover:underline">Grupo Broda</a>
                     <div>
                         <h3>IT Analyst - Management control</h3>
-                        <span>2025 - At present</span>
+                        <span>Feb. 2025 - At present</span>
                     </div>
                     <div>
                         <p className="text-neutral-300">
