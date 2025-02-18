@@ -35,10 +35,7 @@ const AboutMe = () => {
             <div className="hidden absolute bottom-0 left-0 right-0 -top-12 bg-[linear-gradient(to_right,#03082b_1px,transparent_1px),linear-gradient(to_bottom,#03082b_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] md:block"></div>
                 <span className="z-10 text-xs tracking-widest">EVERYTHING, MADE WITH LOVE</span>
                 <TextGenerateEffect className="w-full h-full z-10 text-center font-semibold tracking-wide" words="Original and modern design at your fingertips." />
-                {/* <h1 className="z-10 text-6xl text-center font-semibold tracking-wide">
-                <span className="text-corporative">Original</span> and <span className="text-corporative">modern</span> design at your fingertips.
-            </h1> */}
-                <p className="z-10 text-xl tracking-wider sm:text-center px-8 md:text-xs">Hey! I'm Juani, a Frontend Developer born and raised in Argentina.</p>
+                <p className="z-10 text-xl tracking-wider sm:text-center px-8 md:text-sm">Hey! I'm Juani, a Frontend Developer born and raised in Argentina.</p>
                 <div className="z-10 flex gap-2 pt-8 md:flex-col md:items-center md:pt-2">
                     {SOCIALS.map((social) => {
                         return (

@@ -84,7 +84,7 @@ const PROJECTS = [
 const Projects = () => {
     return (
         <div className="flex flex-col bg-main gap-16 w-full px-96 xl:px-16 lg:px-8 sm:px-2" id="work">
-            <h2 className="text-6xl text-center font-semibold tracking-wide md:text-2xl">
+            <h2 className="text-6xl text-center font-semibold tracking-wide md:text-3xl">
                 My <span className="text-corporative">featured</span> projects
             </h2>
             <div className="grid grid-cols-2 gap-8 2xl:flex 2xl:flex-col">
@@ -92,8 +92,8 @@ const Projects = () => {
                     <article key={name} className="flex flex-col w-full h-auto bg-light border border-cardBorder rounded-lg gap-4 p-8">
                         <img className="rounded-lg w-full" src={imageUrl} alt={`Screenshot of ${name}`} />
                         <div className="flex flex-col gap-4">
-                            <h3 className="text-3xl text-corporative font-semibold md:text-xl">{name}</h3>
-                            <p className="flex flex-wrap md:text-xs">{description}</p>
+                            <h3 className="text-3xl text-corporative font-semibold">{name}</h3>
+                            <p className="flex flex-wrap">{description}</p>
                             <div className="flex -space-x-2">
                                 {technologies.map((technologie) => (
                                     <article title={technologie.name} key={technologie.name} className="rounded-full bg-gradient-to-tl from-[#080C29] to-[#000319] border border-cardBorder p-1.5">
