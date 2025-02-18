@@ -59,12 +59,20 @@ const PROJECTS = [
         websiteUrl: "https://blossomui.vercel.app/",
     },
     {
-        name: "Script - Programming courses ecommerce.",
+        name: "impuestAR - Financial calculator for dollar prices.",
+        description: "Tool created for the easy and quick calculation of the different prices of the dollar, clearly segmented for popular understanding.",
+        technologies: [TECHNOLOGIES.VITE, TECHNOLOGIES.REACTJS, TECHNOLOGIES.TAILWINDCSS, TECHNOLOGIES.VERCEL],
+        imageUrl: "https://res.cloudinary.com/diruiumfk/image/upload/v1724037882/blossomui-project_ls2ycj.png",
+        projectInfo: "/projects/impuestAR",
+        websiteUrl: "https://impuestar.vercel.app/",
+    },
+    {
+        name: "DevBoost - Programming courses ecommerce.",
         description: "E-commerce of an online learning academy related to programming. Selected courses can be purchased and the stock is updated in real time upon purchase, subtracting the product from a Firebase database.",
         technologies: [TECHNOLOGIES.REACTJS, TECHNOLOGIES.FIREBASE, TECHNOLOGIES.SASS],
         imageUrl: "https://res.cloudinary.com/diruiumfk/image/upload/v1724037882/script-project_yyubsb.png",
-        projectInfo: "/projects/script",
-        websiteUrl: "https://script-ecommerce.vercel.app/",
+        projectInfo: "/projects/DevBoost",
+        websiteUrl: "https://devboost-shop.vercel.app/",
     },
     {
         name: "TODOTECH - Peripherals and PCs ecommerce.",
