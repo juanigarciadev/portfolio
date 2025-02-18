@@ -2,7 +2,7 @@ import Link from 'next/link'
 import CubeIcon from '../../../components/icons/Cube'
 import ArrowLeft from '../../../components/icons/ArrowLeft'
 
-export default function BlossomUI() {
+export default function TODOTECH() {
     return(
         <main className="flex flex-col bg-main gap-16 w-full px-96 mt-28 xl:px-16 lg:px-8 sm:px-2">
             <Link href={'/'} className='inline-flex items-center gap-2 font-semibold w-fit border border-cardBorder px-8 py-2 rounded hover:bg-light transition-all 2xl:text-xs 2xl:w-full 2xl:text-center lg:p-4'><ArrowLeft/>Return to home</Link>

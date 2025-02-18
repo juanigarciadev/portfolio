@@ -9,6 +9,7 @@ import Css from "../icons/Css";
 import Bootstrap from "../icons/Bootstrap";
 import Vite from "../icons/Vite";
 import Link from "next/link";
+import NextJs from "../icons/NextJs";
 
 const TECHNOLOGIES = {
     REACTJS: {
@@ -47,6 +48,10 @@ const TECHNOLOGIES = {
         name: "Vite",
         icon: Vite,
     },
+    NEXTJS: {
+        name: "NextJS",
+        icon: NextJs,
+    }
 };
 
 const PROJECTS = [
@@ -61,8 +66,8 @@ const PROJECTS = [
     {
         name: "impuestAR - Financial calculator for dollar prices.",
         description: "Tool created for the easy and quick calculation of the different prices of the dollar, clearly segmented for popular understanding.",
-        technologies: [TECHNOLOGIES.VITE, TECHNOLOGIES.REACTJS, TECHNOLOGIES.TAILWINDCSS, TECHNOLOGIES.VERCEL],
-        imageUrl: "https://res.cloudinary.com/diruiumfk/image/upload/v1724037882/blossomui-project_ls2ycj.png",
+        technologies: [TECHNOLOGIES.NEXTJS, TECHNOLOGIES.TAILWINDCSS, TECHNOLOGIES.VERCEL],
+        imageUrl: "https://res.cloudinary.com/diruiumfk/image/upload/v1739848330/impuestar-project_tz5oet.png?quality=lossless",
         projectInfo: "/projects/impuestAR",
         websiteUrl: "https://impuestar.vercel.app/",
     },
@@ -73,15 +78,7 @@ const PROJECTS = [
         imageUrl: "https://res.cloudinary.com/diruiumfk/image/upload/v1724037882/script-project_yyubsb.png",
         projectInfo: "/projects/DevBoost",
         websiteUrl: "https://devboost-shop.vercel.app/",
-    },
-    {
-        name: "TODOTECH - Peripherals and PCs ecommerce.",
-        description: "E-commerce focused on the sale of pre-assembled computers, components and peripherals.",
-        technologies: [TECHNOLOGIES.HTML, TECHNOLOGIES.CSS, TECHNOLOGIES.BOOTSTRAP],
-        imageUrl: "https://res.cloudinary.com/diruiumfk/image/upload/v1724037882/todotech-project_igb34c.png",
-        projectInfo: "/projects/TODOTECH",
-        websiteUrl: "https://todotech.netlify.app/",
-    },
+    }
 ];
 
 const Projects = () => {
@@ -90,7 +87,7 @@ const Projects = () => {
             <h2 className="text-6xl text-center font-semibold tracking-wide md:text-2xl">
                 My <span className="text-corporative">featured</span> projects
             </h2>
-            <div className="grid grid-cols-2 gap-8 lg:flex lg:flex-col">
+            <div className="flex flex-col gap-8">
                 {PROJECTS.map(({ name, description, technologies, imageUrl, projectInfo, websiteUrl }) => (
                     <article key={name} className="flex flex-col w-full h-auto bg-light border border-cardBorder rounded-lg gap-4 p-8">
                         <img className="rounded-lg w-full" src={imageUrl} alt={`Screenshot of ${name}`} />
@@ -104,11 +101,11 @@ const Projects = () => {
                                     </article>
                                 ))}
                             </div>
-                            <div className="flex gap-4 items-center 2xl:flex-col">
-                                <Link className="font-semibold border border-cardBorder px-8 py-2 rounded hover:bg-main transition-all 2xl:text-xs 2xl:w-full 2xl:text-center lg:p-4" href={projectInfo}>
+                            <div className="flex flex-col gap-4 items-center 2xl:flex-col">
+                                <Link className="font-semibold w-full text-center border border-cardBorder px-8 py-2 rounded hover:bg-main transition-all 2xl:text-xs lg:p-4" href={projectInfo}>
                                     More information
                                 </Link>
-                                <Link className="text-corporativeDark font-semibold bg-corporative border border-cardBorder px-8 py-2 rounded hover:bg-corporativeDark transition-all hover:text-corporativeLight 2xl:text-xs 2xl:w-full 2xl:text-center lg:p-4" href={websiteUrl} target="_blank">
+                                <Link className="text-corporativeDark font-semibold w-full text-center bg-corporative border border-cardBorder px-8 py-2 rounded hover:bg-corporativeDark transition-all hover:text-corporativeLight 2xl:text-xs lg:p-4" href={websiteUrl} target="_blank">
                                     Open Live Site
                                 </Link>
                             </div>
