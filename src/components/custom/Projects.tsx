@@ -10,6 +10,7 @@ import Bootstrap from "../icons/Bootstrap";
 import Vite from "../icons/Vite";
 import Link from "next/link";
 import NextJs from "../icons/NextJs";
+import ArrowLeft from "../icons/ArrowLeft";
 
 const TECHNOLOGIES = {
     REACTJS: {
@@ -56,26 +57,26 @@ const TECHNOLOGIES = {
 
 const PROJECTS = [
     {
-        name: "BlossomUI - Components library for Tailwind.",
+        name: "BlossomUI",
         description: "Stylish, clean and reusable UI component library made with Tailwind. Open source and free.",
         technologies: [TECHNOLOGIES.VITE, TECHNOLOGIES.REACTJS, TECHNOLOGIES.TAILWINDCSS, TECHNOLOGIES.VERCEL],
-        imageUrl: "https://res.cloudinary.com/diruiumfk/image/upload/v1724037882/blossomui-project_ls2ycj.png",
+        imageUrl: "https://res.cloudinary.com/diruiumfk/image/upload/v1724003620/blossomui_wcxsqc.png",
         projectInfo: "/projects/BlossomUI",
         websiteUrl: "https://blossomui.vercel.app/",
     },
     {
-        name: "impuestAR - Financial calculator for dollar prices.",
+        name: "impuestAR",
         description: "Tool created for the easy and quick calculation of the different prices of the dollar, clearly segmented for popular understanding.",
         technologies: [TECHNOLOGIES.NEXTJS, TECHNOLOGIES.TAILWINDCSS, TECHNOLOGIES.VERCEL],
-        imageUrl: "https://res.cloudinary.com/diruiumfk/image/upload/v1739848330/impuestar-project_tz5oet.png?quality=lossless",
+        imageUrl: "https://res.cloudinary.com/diruiumfk/image/upload/v1739848424/impuestar-image_i57yzl.png?quality=lossless",
         projectInfo: "/projects/impuestAR",
         websiteUrl: "https://impuestar.vercel.app/",
     },
     {
-        name: "DevBoost - Programming courses ecommerce.",
+        name: "DevBoost",
         description: "E-commerce of an online learning academy related to programming. Selected courses can be purchased and the stock is updated in real time upon purchase, subtracting the product from a Firebase database.",
         technologies: [TECHNOLOGIES.REACTJS, TECHNOLOGIES.FIREBASE, TECHNOLOGIES.SASS],
-        imageUrl: "https://res.cloudinary.com/diruiumfk/image/upload/v1724037882/script-project_yyubsb.png",
+        imageUrl: "https://res.cloudinary.com/diruiumfk/image/upload/v1739849923/devboost-image_zqty5e.png?quality=lossless",
         projectInfo: "/projects/DevBoost",
         websiteUrl: "https://devboost-shop.vercel.app/",
     }
@@ -88,29 +89,24 @@ const Projects = () => {
                 My <span className="text-corporative">featured</span> projects
             </h2>
             <div className="grid grid-cols-2 gap-8 2xl:flex 2xl:flex-col">
-                {PROJECTS.map(({ name, description, technologies, imageUrl, projectInfo, websiteUrl }) => (
-                    <article key={name} className="flex flex-col w-full h-auto bg-light border border-cardBorder rounded-lg gap-4 p-8">
-                        <img className="rounded-lg w-full" src={imageUrl} alt={`Screenshot of ${name}`} />
-                        <div className="flex flex-col gap-4">
-                            <h3 className="text-3xl text-corporative font-semibold">{name}</h3>
-                            <p className="flex flex-wrap">{description}</p>
-                            <div className="flex -space-x-2">
-                                {technologies.map((technologie) => (
-                                    <article title={technologie.name} key={technologie.name} className="rounded-full bg-gradient-to-tl from-[#080C29] to-[#000319] border border-cardBorder p-1.5">
-                                        <technologie.icon className="size-6" />
-                                    </article>
-                                ))}
-                            </div>
-                            <div className="flex flex-col gap-4 items-center 2xl:flex-col">
-                                <Link className="font-semibold w-full text-center border border-cardBorder px-8 py-2 rounded hover:bg-main transition-all 2xl:text-xs lg:p-4" href={projectInfo}>
-                                    More information
-                                </Link>
-                                <Link className="text-corporativeDark font-semibold w-full text-center bg-corporative border border-cardBorder px-8 py-2 rounded hover:bg-corporativeDark transition-all hover:text-corporativeLight 2xl:text-xs lg:p-4" href={websiteUrl} target="_blank">
-                                    Open Live Site
-                                </Link>
-                            </div>
+                {PROJECTS.map(({ name, description, technologies, imageUrl, projectInfo }) => (
+                    <Link href={projectInfo} key={name} className="relative flex flex-col w-full h-[20rem] bg-light border border-cardBorder rounded-lg gap-4 p-8 bg-contain bg-no-repeat bg-top group xl:bg-cover" style={{ backgroundImage: `url(${imageUrl})` }}>
+                        <div className="absolute flex items-center justify-center right-5 top-5 rotate-180 rounded-full bg-[#080C29] border border-cardBorder p-1.5 group-hover:bg-[#1a245d] duration-200">
+                            <ArrowLeft/>
                         </div>
-                    </article>
+                        <div className="absolute left-5 top-5 flex -space-x-2">
+                            {technologies.map((technologie) => (
+                                <article title={technologie.name} key={technologie.name} className="rounded-full bg-gradient-to-tl from-[#080C29] to-[#000319] border border-cardBorder p-1.5">
+                                    <technologie.icon className="size-6" />
+                                </article>
+                            ))}
+                        </div>
+                        <div className="absolute from-black to-transparent bg-gradient-to-t w-full h-40 rounded-b-lg bottom-0 left-0"></div>
+                        <div className="absolute bottom-5 left-5 flex flex-col gap-4 z-10">
+                            <h3 className="text-3xl text-corporative font-semibold" style={{ textShadow: "0px 2px 1px rgba(0,0,0,0.3)" }}>{name}</h3>
+                            <p className="flex flex-wrap text-sm text-neutral-300">{description}</p>
+                        </div>
+                    </Link>
                 ))}
             </div>
         </div>
