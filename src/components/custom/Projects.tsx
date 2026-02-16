@@ -25,8 +25,8 @@ const Projects = () => {
         whileInView={{opacity: 1, y: '0px'}}
         transition={{duration: 0.3}}
         viewport={{ once: true, amount: 0.2 }}
-        className="flex flex-col bg-main gap-16 w-full px-96 xl:px-16 lg:px-8 sm:px-2" id="work">
-            <h2 className="text-6xl title text-center font-semibold tracking-wide md:text-3xl">
+        className="flex flex-col bg-main gap-16 w-full px-96 xl:px-8 lg:px-4 sm:px-2" id="work">
+            <h2 className="text-6xl title text-center font-semibold tracking-wide md:text-5xl">
                 My <span className="text-corporative">featured</span> projects
             </h2>
             <div

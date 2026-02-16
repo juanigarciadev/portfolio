@@ -45,6 +45,9 @@
   font-family: 'Nohemi-Medium', sans-serif;
 }
 
+.anchorText {
+  @apply text-lg inline-flex gap-2 px-8 py-2 cursor-pointer hover:bg-neutral-300 hover:bg-opacity-10 hover:rounded transition-all select-none md:px-4 md:py-0 md:hover:bg-transparent
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
