@@ -1,16 +1,18 @@
+"use client"
 import Link from "next/link";
 import React from "react";
 import Github from "../icons/Github";
-import ReactJS from "../icons/ReactJS";
-import Tailwind from "../icons/Tailwind";
-import AstroIcon from "../icons/AstroIcon";
-import Javascript from "../icons/Javascript";
-import NextJs from "../icons/NextJs";
 import ArrowLeft from "../icons/ArrowLeft";
+import {motion} from 'framer-motion'
 
 const Information = () => {
     return(
-        <div className="flex flex-col bg-main gap-16 w-full px-96 xl:px-16 lg:px-8 md:pb-32 sm:px-2 h-auto" id="aboutMe">
+        <motion.div
+        initial={{opacity: 0, y: '20px'}}
+        whileInView={{opacity: 1, y: '0px'}}
+        transition={{duration: 0.3}}
+        viewport={{ once: true, amount: 0.2 }}
+        className="flex flex-col bg-main gap-16 w-full px-96 xl:px-16 lg:px-8 md:pb-32 sm:px-2 h-auto" id="aboutMe">
             <div className="hidden md:grid md:flex-col gap-4">
                 <div className="inline-flex items-center w-full h-[292px] rounded border border-cardBorder bg-light p-4">
                     <div className="flex flex-col gap-2">
@@ -95,7 +97,7 @@ const Information = () => {
                     </Link>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

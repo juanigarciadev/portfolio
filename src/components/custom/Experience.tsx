@@ -1,8 +1,15 @@
+"use client"
 import React from "react"
+import {motion} from 'framer-motion'
 
 const Experience = () => {
     return(
-        <section className="flex flex-col bg-main gap-16 w-full px-96 xl:px-16 lg:px-8 sm:px-2 mb-64 md:mb-32">
+        <motion.section
+        initial={{opacity: 0, y: '20px'}}
+        whileInView={{opacity: 1, y: '0px'}}
+        transition={{duration: 0.3}}
+        viewport={{ once: true, amount: 0.2 }}
+        className="flex flex-col bg-main gap-16 w-full px-96 xl:px-16 lg:px-8 sm:px-2 mb-64 md:mb-32">
             <h3 className="text-6xl text-center font-semibold tracking-wide md:text-3xl">
                 My <span className="text-corporative">experience</span>
             </h3>
@@ -24,7 +31,7 @@ const Experience = () => {
                     </div>
     </div>
             </article>
-        </section>
+        </motion.section>
     )
 }
 
