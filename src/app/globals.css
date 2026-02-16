@@ -8,6 +8,44 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+* {
+  font-family: 'TTInterphases', sans-serif;
+}
+
+@font-face {
+  font-family: 'Nohemi';
+  src: url('../../public/fonts/Nohemi-Regular.woff') format('woff2');
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nohemi-Medium';
+  src: url('../../public/fonts/Nohemi-Medium.woff') format('woff2');
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TTInterphases';
+  src: url('../../public/fonts/TTInterphasesProTrlVariable.woff2') format('woff2');
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.title {
+  font-family: 'Nohemi', sans-serif;
+  font-weight: 500;
+}
+
+.heroTitle {
+  font-family: 'Nohemi-Medium', sans-serif;
+}
+
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;

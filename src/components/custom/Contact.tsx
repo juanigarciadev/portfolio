@@ -14,7 +14,7 @@ const Contact = () => {
         transition={{duration: 0.3}}
         viewport={{ once: true, amount: 0.2 }}
         className="relative flex flex-col gap-8 w-full py-64 xl:px-16 lg:px-8 sm:px-2 md:py-32" id="contact">
-            <h3 className="text-6xl text-center font-semibold tracking-wide md:text-3xl">
+            <h3 className="text-6xl title text-center font-semibold tracking-wide md:text-3xl">
                 Ready to <span className="text-corporative">work</span> with me?
             </h3>
             <div className="flex flex-col gap-4 items-center">

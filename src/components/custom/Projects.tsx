@@ -26,7 +26,7 @@ const Projects = () => {
         transition={{duration: 0.3}}
         viewport={{ once: true, amount: 0.2 }}
         className="flex flex-col bg-main gap-16 w-full px-96 xl:px-16 lg:px-8 sm:px-2" id="work">
-            <h2 className="text-6xl text-center font-semibold tracking-wide md:text-3xl">
+            <h2 className="text-6xl title text-center font-semibold tracking-wide md:text-3xl">
                 My <span className="text-corporative">featured</span> projects
             </h2>
             <div
@@ -53,8 +53,8 @@ const Projects = () => {
                             </div>
                             <div className="absolute from-black to-transparent bg-gradient-to-t w-full h-40 rounded-b-lg bottom-0 left-0"></div>
                             <div className="absolute bottom-5 left-5 flex flex-col gap-4 z-10">
-                                <h3 className="text-3xl text-corporative font-semibold" style={{ textShadow: "0px 2px 1px rgba(0,0,0,0.3)" }}>{name}</h3>
-                                <p className="flex flex-wrap text-sm text-neutral-300">{description}</p>
+                                <h3 className="title text-4xl text-corporative font-semibold" style={{ textShadow: "0px 2px 1px rgba(0,0,0,0.3)" }}>{name}</h3>
+                                <p className="flex flex-wrap text-md text-neutral-300">{description}</p>
                             </div>
                         </Link>
                     </motion.div>
