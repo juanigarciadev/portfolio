@@ -15,7 +15,7 @@ const Contact = () => {
         viewport={{ once: true, amount: 0.2 }}
         className="relative flex flex-col gap-8 w-full py-64 xl:px-8 lg:px-4 sm:px-2 md:py-32" id="contact">
             <h3 className="text-6xl title text-center font-semibold tracking-wide md:text-5xl">
-                Ready to <span className="text-corporative">work</span> with me?
+                Ready to <span className="text-corporative font-semibold">work</span> with me?
             </h3>
             <div className="flex flex-col gap-4 items-center">
                 <a href="mailto:juanigarciadev" className="relative inline-flex h-12 overflow-hidden rounded p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">

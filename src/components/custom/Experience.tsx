@@ -11,7 +11,7 @@ const Experience = () => {
         viewport={{ once: true, amount: 0.2 }}
         className="flex flex-col bg-main gap-16 w-full px-96 xl:px-8 lg:px-4 sm:px-2 mb-64 md:mb-32">
             <h3 className="text-6xl title text-center font-semibold tracking-wide md:text-5xl">
-                My <span className="text-corporative">experience</span>
+                My <span className="text-corporative font-semibold">experience</span>
             </h3>
             <article className="inline-flex gap-4 lg:flex-col">
                 <div className="inline-flex flex-col gap-4 items-center lg:items-start">

@@ -27,7 +27,7 @@ const Projects = () => {
         viewport={{ once: true, amount: 0.2 }}
         className="flex flex-col bg-main gap-16 w-full px-96 xl:px-8 lg:px-4 sm:px-2" id="work">
             <h2 className="text-6xl title text-center font-semibold tracking-wide md:text-5xl">
-                My <span className="text-corporative">featured</span> projects
+                My <span className="text-corporative font-semibold">featured</span> projects
             </h2>
             <div
             className="grid grid-cols-2 gap-8 2xl:flex 2xl:flex-col">
