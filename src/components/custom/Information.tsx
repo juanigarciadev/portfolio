@@ -3,7 +3,22 @@ import Link from "next/link";
 import React from "react";
 import Github from "../icons/Github";
 import ArrowLeft from "../icons/ArrowLeft";
+import { TechIcon } from "./TechIcon";
+import { TECHNOLOGIES } from "@/lib/mocks";
 import {motion} from 'framer-motion'
+
+const MAIN_STACK = [
+    TECHNOLOGIES.REACTJS,
+    TECHNOLOGIES.NEXTJS,
+    TECHNOLOGIES.TYPESCRIPT,
+    TECHNOLOGIES.NESTJS,
+    TECHNOLOGIES.POSTGRES,
+    TECHNOLOGIES.MYSQL,
+    TECHNOLOGIES.DOCKER,
+    TECHNOLOGIES.JENKINS,
+    TECHNOLOGIES.TAILWINDCSS,
+    TECHNOLOGIES.VERCEL,
+];
 
 const Information = () => {
     return(
@@ -12,13 +27,13 @@ const Information = () => {
         whileInView={{opacity: 1, y: '0px'}}
         transition={{duration: 0.3}}
         viewport={{ once: true, amount: 0.2 }}
-        className="flex flex-col bg-main gap-16 w-full px-96 xl:px-16 lg:px-8 md:pb-32 sm:px-2 h-auto" id="aboutMe">
-            <div className="grid grid-rows-2 gap-4 md:hidden">
-                <div className="grid grid-cols-2 w-full h-[600px] rounded gap-4 md:flex-col">
-                    <div className="inline-flex items-end rounded border border-cardBorder bg-light p-4 bg-[bottom_10rem_right_-10rem] bg-contain bg-no-repeat bg-[url('https://res.cloudinary.com/diruiumfk/image/upload/v1732066935/blossomuibackground_lcnotm.png')]">
+        className="flex flex-col bg-main gap-16 w-full px-96 xl:px-16 lg:px-8 md:pb-32 sm:px-2 h-auto scroll-mt-24" id="aboutMe">
+            <div className="grid grid-rows-2 gap-4 md:flex md:flex-col">
+                <div className="grid grid-cols-2 w-full h-[600px] rounded gap-4 md:flex md:flex-col md:h-auto">
+                    <div className="inline-flex items-end rounded border border-cardBorder bg-light p-4 bg-[bottom_10rem_right_-10rem] bg-contain bg-no-repeat bg-[url('https://res.cloudinary.com/diruiumfk/image/upload/v1732066935/blossomuibackground_lcnotm.png')] md:min-h-[16rem]">
                         <span className="title text-wrap text-3xl font-semibold tracking-wide md:text-2xl">Always improving to make stunning sites.</span>
                     </div>
-                    <div className="w-full grid grid-rows-2 gap-4 rounded">
+                    <div className="w-full grid grid-rows-2 gap-4 rounded md:flex md:flex-col">
                         <div className="flex flex-col gap-4 w-full rounded border border-cardBorder bg-light p-4 bg-no-repeat bg-[bottom_-5rem_right_-10rem] bg-contain bg-[url('https://res.cloudinary.com/diruiumfk/image/upload/v1732063669/components_d52jfz.png')]">
                         <div className="flex flex-col gap-2">
                             <span className="z-10 text-xs tracking-widest">WHAT I'M DOING</span>
@@ -26,13 +41,17 @@ const Information = () => {
                         </div>
                             <Link href='/projects/BlossomUI' className="flex items-center gap-2 font-semibold w-fit border border-cardBorder bg-black rounded px-8 py-2 hover:bg-light transition-all md:text-xs md:w-full md:justify-center">More information</Link>
                         </div>
-                        <div className="grid grid-cols-2 gap-4 rounded">
-                            <div className="inline-flex items-center justify-center rounded border border-cardBorder bg-light">
+                        <div className="grid grid-cols-2 gap-4 rounded md:grid-cols-1">
+                            <div className="inline-flex items-center justify-center rounded border border-cardBorder bg-light md:py-6">
                                 <img className="rounded w-40" src="https://res.cloudinary.com/diruiumfk/image/upload/v1732068941/Flag_of_Argentina.svg_m9olkc.png" alt="argentinian flag" />
                             </div>
                             <div className="flex flex-col gap-4 rounded border border-cardBorder bg-light relative p-4">
                                 <span className="title text-wrap text-3xl font-semibold tracking-wide md:text-2xl">Main stack</span>
-                                <img src="https://res.cloudinary.com/diruiumfk/image/upload/v1732069165/stack_xlwn3o.png" alt="technologies stack" />
+                                <div className="flex flex-wrap gap-2">
+                                    {MAIN_STACK.map((technology) => (
+                                        <TechIcon key={technology.name} technology={technology} size="md" />
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -45,8 +64,8 @@ const Information = () => {
                             </span>
                         </div>
                     </div>
-                    <Link href={'https://github.com/juanigarciadev'} target="_blank" className="relative group flex items-center justify-center rounded border border-cardBorder bg-light cursor-pointer hover:bg-main">
-                        <Github className='size-32 group-hover:size-28 duration-100'/>
+                    <Link href={'https://github.com/juanigarciadev'} target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" className="relative group flex items-center justify-center rounded border border-cardBorder bg-light cursor-pointer hover:bg-main md:py-8">
+                        <Github className='size-32 group-hover:size-28 duration-100 md:size-24 md:group-hover:size-24'/>
                         <div className="absolute bg-black right-3 bottom-3 bg-opacity-80 border border-cardBorder p-2 rounded-lg cursor-pointer group-hover:bg-light transition-all">
                             <ArrowLeft className='rotate-[135deg]'/>
                         </div>

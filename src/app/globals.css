@@ -14,7 +14,7 @@
 
 @font-face {
   font-family: 'Nohemi';
-  src: url('../../public/fonts/Nohemi-Regular.woff') format('woff2');
+  src: url('../../public/fonts/Nohemi-Regular.woff') format('woff');
   font-display: swap;
   font-weight: normal;
   font-style: normal;
@@ -22,7 +22,7 @@
 
 @font-face {
   font-family: 'Nohemi-Medium';
-  src: url('../../public/fonts/Nohemi-Medium.woff') format('woff2');
+  src: url('../../public/fonts/Nohemi-Medium.woff') format('woff');
   font-display: swap;
   font-weight: normal;
   font-style: normal;

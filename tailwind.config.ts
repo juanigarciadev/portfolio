@@ -19,9 +19,6 @@ const config: Config = {
             borderColor: {
                 cardBorder: "#1a246d",
             },
-            fontFamily: {
-                serif: ["Inter Variable"],
-            },
             animation: {
                 aurora: "aurora 60s linear infinite",
             },
