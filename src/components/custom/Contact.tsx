@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import Copy from "../icons/Copy";
 import Check from "../icons/Check";
 import Mail from "../icons/Mail";
@@ -29,7 +30,7 @@ const Contact = () => {
     const socials = SOCIALS.filter((social) => social.title !== "Contact me");
 
     return (
-        <section className="container-page scroll-mt-24 py-24 md:py-16" id="contact">
+        <section className="container-page scroll-mt-24 py-32 md:py-20" id="contact">
             <FadeIn>
                 <div className="relative overflow-hidden rounded-3xl border border-cardBorder bg-light px-8 py-24 text-center md:px-6 md:py-16">
                     <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_70%_at_50%_0%,rgba(167,139,250,0.2),transparent)]" />
@@ -45,16 +46,33 @@ const Contact = () => {
                                 <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
                                 <span className="inline-flex h-full w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-black px-8 py-2 font-semibold text-white backdrop-blur-3xl transition-all hover:bg-light"><Mail />Send me an email</span>
                             </a>
-                            <button
+                            {/* El botón cambia de ancho entre el email y "Copied!": layout lo anima en vez de saltar. */}
+                            <motion.button
+                                layout
                                 type="button"
                                 onClick={copyEmail}
                                 disabled={copy}
                                 aria-label={copy ? "Email address copied" : "Copy email address"}
-                                className="inline-flex h-12 items-center gap-3 rounded-full border border-cardBorder bg-main px-6 font-semibold transition-all hover:border-corporative"
+                                style={{ borderRadius: 9999 }}
+                                transition={{ type: "spring", stiffness: 420, damping: 34 }}
+                                className="inline-flex h-12 items-center gap-3 overflow-hidden border border-cardBorder bg-main px-6 font-semibold hover:border-corporative"
                             >
-                                {copy ? "Copied!" : EMAIL}
-                                {copy ? <Check /> : <Copy />}
-                            </button>
+                                <AnimatePresence mode="popLayout" initial={false}>
+                                    {/* Texto e icono se animan juntos como una sola unidad. */}
+                                    <motion.span
+                                        key={copy ? "copied" : "email"}
+                                        layout="position"
+                                        initial={{ opacity: 0, filter: "blur(4px)" }}
+                                        animate={{ opacity: 1, filter: "blur(0px)" }}
+                                        exit={{ opacity: 0, filter: "blur(4px)" }}
+                                        transition={{ duration: 0.2 }}
+                                        className="flex items-center gap-3 whitespace-nowrap"
+                                    >
+                                        {copy ? "Copied!" : EMAIL}
+                                        {copy ? <Check /> : <Copy />}
+                                    </motion.span>
+                                </AnimatePresence>
+                            </motion.button>
                         </div>
                         <div className="flex gap-3 pt-2">
                             {socials.map((social) => (

@@ -41,8 +41,8 @@ const FloatingItem = ({ scroll, range, rotate = 0, delay = 0, className, childre
 };
 
 const FEATURED_CARDS = [
-    { slug: "brodaverso", className: "left-[36%] top-[0%] w-[62%] z-10", range: [0, -150] as [number, number], rotate: -3, delay: 0 },
-    { slug: "meal-management", className: "left-[0%] top-[24%] w-[52%] z-20", range: [0, 40] as [number, number], rotate: 4, delay: 0.3 },
+    { slug: "meal-management", className: "left-[46%] top-[0%] w-[52%] z-10", range: [0, -150] as [number, number], rotate: -3, delay: 0 },
+    { slug: "brodaverso", className: "left-[0%] top-[24%] w-[62%] z-20", range: [0, 40] as [number, number], rotate: 4, delay: 0.3 },
     { slug: "grupo-broda-website", className: "left-[48%] top-[46%] w-[50%] z-10", range: [0, -70] as [number, number], rotate: -2, delay: 0.6 },
 ];
 
@@ -64,7 +64,7 @@ const AboutMe = () => {
     const socials = SOCIALS.filter((social) => social.title !== "Contact me");
 
     return (
-        <section ref={ref} id="top" className="relative min-h-screen overflow-hidden pb-24 pt-40 lg:pt-32">
+        <section ref={ref} id="top" className="relative min-h-screen overflow-hidden pb-32 pt-40 lg:pt-32 md:pb-20">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#03082b_1px,transparent_1px),linear-gradient(to_bottom,#03082b_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,#000_70%,transparent_100%)]" />
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_45%_40%_at_75%_45%,rgba(167,139,250,0.16),transparent)] lg:bg-[radial-gradient(ellipse_70%_35%_at_50%_70%,rgba(167,139,250,0.14),transparent)]" />
 
@@ -79,24 +79,24 @@ const AboutMe = () => {
                     </span>
                     <TextGenerateEffect
                         className="heroTitle w-full text-left font-semibold tracking-wide lg:text-center"
-                        wordClassName="text-6xl xl:text-5xl md:text-4xl"
+                        wordClassName="text-5xl md:text-4xl"
                         highlight={[2, 3, 6]}
                         words="I build web platforms people actually enjoy using."
                     />
                     <p className="max-w-xl text-xl tracking-wide text-neutral-300 md:text-lg">
                         Hey! I'm Juani, a frontend developer born and raised in Argentina. I turn complex company processes into fast, friendly products, from internal platforms used every day to open source UI.
                     </p>
-                    <div className="flex flex-wrap items-center gap-3 pt-2 lg:justify-center">
-                        <Link href="#work" className="group inline-flex items-center gap-2 rounded border border-cardBorder bg-corporative px-8 py-2 font-semibold text-corporativeDark transition-all hover:bg-corporativeDark hover:text-corporativeLight">
+                    <div className="flex flex-wrap items-center gap-3 pt-2 lg:justify-center md:grid md:w-full md:grid-cols-[1fr_auto_auto]">
+                        <Link href="#work" className="group inline-flex items-center gap-2 whitespace-nowrap md:col-span-3 md:justify-center md:px-4 rounded-full border border-cardBorder bg-corporative h-12 px-8 font-semibold text-corporativeDark transition-all hover:bg-corporativeDark hover:text-corporativeLight">
                             View my work
                             <ArrowLeft className="-rotate-90 fill-[#2a1e50] transition-colors group-hover:fill-[#e4dbff]" />
                         </Link>
-                        <Link href="#contact" className="inline-flex items-center gap-2 rounded border border-cardBorder bg-black px-8 py-2 font-semibold transition-all hover:bg-light">
+                        <Link href="#contact" className="inline-flex items-center gap-2 whitespace-nowrap md:justify-center md:px-4 rounded-full border border-cardBorder bg-black h-12 px-8 font-semibold transition-all hover:bg-light">
                             Contact me
                         </Link>
                         {socials.map((social) => (
                             <Tooltip key={social.title} label={social.title}>
-                                <a href={social.url} target="_blank" rel="noopener noreferrer" aria-label={social.title} className="flex items-center justify-center rounded border border-cardBorder bg-black p-2.5 transition-all hover:bg-light">
+                                <a href={social.url} target="_blank" rel="noopener noreferrer" aria-label={social.title} className="flex items-center justify-center rounded-full border border-cardBorder bg-black size-12 transition-all hover:bg-light">
                                     <social.icon className="size-5" />
                                 </a>
                             </Tooltip>
@@ -112,7 +112,7 @@ const AboutMe = () => {
                             <FloatingItem key={slug} scroll={scrollYProgress} range={range} rotate={rotate} delay={delay} className={className}>
                                 <Link
                                     href={`/projects/${slug}`}
-                                    className="group block overflow-hidden rounded-lg border border-cardBorder bg-light shadow-[0_20px_60px_-15px_rgba(0,0,0,0.9)] transition-transform duration-300 hover:scale-105"
+                                    className="group block overflow-hidden rounded-2xl border border-cardBorder bg-light shadow-[0_20px_60px_-15px_rgba(0,0,0,0.9)] transition-transform duration-300 hover:scale-105"
                                 >
                                     <img src={project.imageUrl} alt={`${project.name} preview`} className="aspect-[16/10] w-full object-cover object-top" />
                                     <span className="flex items-center justify-between gap-2 px-3 py-2 text-[10px] uppercase tracking-widest text-neutral-300 md:text-[9px]">

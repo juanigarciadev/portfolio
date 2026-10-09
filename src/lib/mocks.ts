@@ -55,7 +55,7 @@ export type Project = {
 
 export const SOCIALS = [
         {
-            title: 'Github',
+            title: 'GitHub',
             icon: Github,
             url: 'https://github.com/juanigarciadev',
         },
@@ -142,7 +142,7 @@ export const PROJECTS: Project[] = [
             {
                 title: "One login for the whole company",
                 text: "Employees sign in once with Clerk. Every team is a Clerk organization, and after signing in the home works as a hub: a tile for each module the person can access, such as purchasing, Progresivo Techbox, the gastronomy panel, announcements, tickets, news and management control. All the apps live under subdomains of the same domain and share the same Clerk instance, so the session carries over between them without asking the user to sign in again.",
-                placeholder: "Sign in screen",
+                image: { src: "/images/brodaverso/sign-in.jpg", alt: "Brodaverso sign-in screen with Clerk authentication" },
             },
             {
                 title: "Architecture: independent apps that feel like one",
@@ -154,7 +154,7 @@ export const PROJECTS: Project[] = [
                     "Every module is deployed through our own CI/CD pipeline, with Docker-based setups and deployment guides.",
                     "Every module validates the Clerk session by itself, so a proxy or redirect never replaces the authorization of the module behind it.",
                 ],
-                placeholder: "One team's module (e.g. purchasing)",
+                image: { src: "/images/brodaverso/team-module.jpg", alt: "Monitoring module showing the status of the virtual machines and their containers" },
             },
             {
                 title: "A design system to keep everything consistent",
@@ -170,17 +170,17 @@ export const PROJECTS: Project[] = [
                     "Reassign, reject (with a mandatory reason), finish and reactivate, plus search and filters by text, priority, assignee, requester and month.",
                     "A personal view with everything you created, whatever the team, in a grid or a list. In-app notifications and a documents module with a Notion-style editor complete the module.",
                 ],
-                placeholder: "Tickets Kanban board",
+                image: { src: "/images/brodaverso/kanban.jpg", alt: "Tickets Kanban board with configurable columns, filters and search" },
             },
             {
                 title: "Permissions that live on the server",
                 text: "The person who opens a ticket for another team is a requester: they can always follow it and comment, and can edit it only while it is still in the default column. Once the team takes it, it becomes read-only for them, and only the team can manage tags, checklists or close it. If the creator belongs to the destination team, none of those limits apply. All of this is revalidated on the server on every mutation, not just hidden in the interface, and attachments are never exposed through a public storage URL but through an authenticated route.",
-                placeholder: "Ticket detail",
+                image: { src: "/images/brodaverso/detalle-ticket.jpg", alt: "Ticket detail panel with assignees, due dates and checklist" },
             },
             {
                 title: "Announcements for the stores",
                 text: "A bulletin board where marketing, administration and purchasing publish notices with a cover and a rich description, written in a Notion-style block editor, that every FRAT store can read. A new store gets access automatically just by following the naming convention of its organization, with no redeploy.",
-                placeholder: "Announcements board",
+                image: { src: "/images/brodaverso/avisos.jpg", alt: "Announcements board with cover, status and read tracking" },
             },
             {
                 title: "Technical decisions",
@@ -222,8 +222,8 @@ export const PROJECTS: Project[] = [
         imageUrl: "/projects/grupo-broda-website.jpg",
         websiteUrl: "https://grupobroda.com/",
         blocks: [
-            { text: "A complete redesign of the corporate website of Grupo Broda, built with Next.js, React and Tailwind CSS, with performance and scalability as the main goals.", placeholder: "Full page screenshot" },
-            { text: "Sections reveal as you scroll through animations and visibility detection, and a logo slider showcases the brands of the group.", placeholder: "Animated section or logo slider" },
+            { text: "A complete redesign of the corporate website of Grupo Broda, built with Next.js, React and Tailwind CSS, with performance and scalability as the main goals.", image: { src: "/images/grupo-broda-website/industries.jpg", alt: "Industries section of the Grupo Broda website" } },
+            { text: "Sections reveal as you scroll through animations and visibility detection, and a logo slider showcases the brands of the group.", image: { src: "/images/grupo-broda-website/partners.jpg", alt: "Logo slider with the brands of the group above the industries section" } },
         ],
     },
     {
@@ -236,8 +236,8 @@ export const PROJECTS: Project[] = [
         imageUrl: "/projects/alma-chacras.jpg",
         websiteUrl: "https://almachacras.com.ar",
         blocks: [
-            { text: "Presentation site for Alma Chacras, a residential complex developed by Grupo Broda together with the studio A4, designed to show off its panoramic views and its modern architecture.", placeholder: "Home and gallery" },
-            { text: "Built with React and TypeScript on Vite, styled with Tailwind CSS, animated with Framer Motion and Swiper galleries. It supports several languages and includes a contact form, and it is deployed on Vercel.", placeholder: "Contact form or mobile view" },
+            { text: "Presentation site for Alma Chacras, a residential complex developed by Grupo Broda together with the studio A4, designed to show off its panoramic views and its modern architecture.", image: { src: "/images/alma-chacras/gallery.jpg", alt: "Image gallery of the Alma Chacras amenities" } },
+            { text: "Built with React and TypeScript on Vite, styled with Tailwind CSS, animated with Framer Motion and Swiper galleries. It supports several languages and includes a contact form, and it is deployed on Vercel.", image: { src: "/images/alma-chacras/contact.jpg", alt: "Contact form of the Alma Chacras website" } },
         ],
     },
     // --- Personal ---

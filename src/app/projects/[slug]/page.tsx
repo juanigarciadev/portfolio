@@ -5,6 +5,7 @@ import { Fragment } from "react";
 import ArrowLeft from "@/components/icons/ArrowLeft";
 import { FadeIn } from "@/components/custom/FadeIn";
 import { TechIcon } from "@/components/custom/TechIcon";
+import { ZoomableImage } from "@/components/custom/ZoomableImage";
 import { PROJECTS, getProject } from "@/lib/mocks";
 
 type Params = { slug: string };
@@ -40,7 +41,7 @@ const renderText = (text: string) =>
     });
 
 const BrowserFrame = ({ children }: { children: React.ReactNode }) => (
-    <div className="overflow-hidden rounded-xl border border-cardBorder bg-light shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)]">
+    <div className="overflow-hidden rounded-2xl border border-cardBorder bg-light shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)]">
         <div className="flex items-center gap-2 border-b border-cardBorder bg-main px-4 py-3">
             <span className="size-2.5 rounded-full bg-neutral-700" />
             <span className="size-2.5 rounded-full bg-neutral-700" />
@@ -51,7 +52,7 @@ const BrowserFrame = ({ children }: { children: React.ReactNode }) => (
 );
 
 const ImagePlaceholder = ({ label }: { label: string }) => (
-    <div className="flex h-96 w-full flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-cardBorder bg-light text-center text-neutral-300">
+    <div className="flex h-96 w-full flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-cardBorder bg-light text-center text-neutral-300">
         <span className="text-xs tracking-widest uppercase">Image pending</span>
         <span>{label}</span>
     </div>
@@ -90,7 +91,7 @@ export default function ProjectPage({ params }: { params: Params }) {
             <FadeIn>
                 {imageUrl ? (
                     <BrowserFrame>
-                        <img src={imageUrl} alt={`${name} preview`} className="max-h-[36rem] w-full object-cover object-top" />
+                        <ZoomableImage src={imageUrl} alt={`${name} preview`} className="max-h-[36rem] w-full object-cover object-top" />
                     </BrowserFrame>
                 ) : (
                     <ImagePlaceholder label={`${name} preview`} />
@@ -113,7 +114,7 @@ export default function ProjectPage({ params }: { params: Params }) {
                             {!image && placeholder && <ImagePlaceholder label={placeholder} />}
                             {image && (
                                 <BrowserFrame>
-                                    <img src={image.src} alt={image.alt} loading="lazy" decoding="async" className="w-full" />
+                                    <ZoomableImage src={image.src} alt={image.alt} className="w-full" />
                                 </BrowserFrame>
                             )}
                         </FadeIn>

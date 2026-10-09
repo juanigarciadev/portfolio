@@ -13,7 +13,7 @@ const RELATED_PROJECTS = [
 
 const Experience = () => {
     return(
-        <section className="container-page flex scroll-mt-24 flex-col gap-12 py-24 md:py-16" id="experience">
+        <section className="container-page flex scroll-mt-24 flex-col gap-12 pb-0 pt-32 md:pt-20" id="experience">
             <FadeIn>
                 <SectionHeading eyebrow="Experience">
                     My <span className="text-corporative">experience</span>
@@ -23,9 +23,9 @@ const Experience = () => {
                 <div className="relative flex gap-6 md:gap-4">
                     <div className="flex flex-col items-center">
                         <span className="mt-8 size-3 rounded-full bg-corporative shadow-[0_0_0_6px_rgba(167,139,250,0.15)]" />
-                        <span className="mt-2 w-px flex-1 bg-gradient-to-b from-corporative/40 to-transparent" />
+                        <span className="mt-3 w-[3px] flex-1 rounded-full bg-gradient-to-b from-corporative/60 via-neutral-300/20 to-transparent" />
                     </div>
-                    <SpotlightCard className="flex-1">
+                    <SpotlightCard className="mb-32 flex-1 md:mb-20">
                         <div className="relative z-10 flex flex-col gap-6 p-8 md:p-6">
                             <div className="flex items-start justify-between gap-6 md:flex-col">
                                 <div className="flex items-center gap-4">

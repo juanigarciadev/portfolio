@@ -5,6 +5,9 @@ const config: Config = {
     content: ["./src/pages/**/*.{js,ts,jsx,tsx,mdx}", "./src/components/**/*.{js,ts,jsx,tsx,mdx}", "./src/app/**/*.{js,ts,jsx,tsx,mdx}"],
     theme: {
         extend: {
+            colors: {
+                corporative: "#A78BFA",
+            },
             textColor: {
                 corporative: "#A78BFA",
                 corporativeDark: "#2a1e50",

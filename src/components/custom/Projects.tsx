@@ -82,7 +82,7 @@ const FeaturedCard = ({ project }: { project: Project }) => (
 
 const Projects = () => {
     return (
-        <section className="container-page flex scroll-mt-24 flex-col gap-16 py-24 md:py-16" id="work">
+        <section className="container-page flex scroll-mt-24 flex-col gap-16 py-32 md:py-20" id="work">
             <FadeIn>
                 <SectionHeading eyebrow="Selected work" description="Internal platforms, websites and open source: the things I have built and shipped.">
                     My <span className="text-corporative">featured</span> projects
@@ -97,7 +97,7 @@ const Projects = () => {
                     <div key={category} className="flex flex-col gap-6">
                         <FadeIn><h3 className="eyebrow">{title}</h3></FadeIn>
                         {featured && <FadeIn><FeaturedCard project={featured} /></FadeIn>}
-                        <div className="grid grid-cols-3 gap-6 lg:grid-cols-2 md:grid-cols-1">
+                        <div className="grid grid-cols-2 gap-6 md:grid-cols-1">
                             {grid.map((project) => (
                                 <FadeIn key={project.slug} className="h-full">
                                     <ProjectCard project={project} />

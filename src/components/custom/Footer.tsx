@@ -11,7 +11,7 @@ const FOOTER_LINKS = [
 
 const Footer = () => {
     return (
-        <footer className="relative w-full border-t border-cardBorder bg-main">
+        <footer className="relative w-full rounded-t-3xl border border-b-0 border-cardBorder bg-light">
             <div className="container-page flex flex-col gap-10 py-12">
                 <div className="grid grid-cols-3 items-start gap-8 md:grid-cols-1">
                     <div className="flex flex-col gap-3">
@@ -29,7 +29,7 @@ const Footer = () => {
                     </nav>
                     <div className="flex gap-3 justify-self-end md:justify-self-start">
                         {SOCIALS.map((social) => (
-                            <a href={social.url} target="_blank" rel="noopener noreferrer" aria-label={social.title} key={social.title} className="rounded-xl border border-cardBorder bg-light p-3 transition-all hover:-translate-y-0.5 hover:border-corporative/40">
+                            <a href={social.url} target="_blank" rel="noopener noreferrer" aria-label={social.title} key={social.title} className="rounded-full border border-cardBorder bg-light p-3 transition-all hover:-translate-y-0.5 hover:border-corporative/40">
                                 <social.icon className="size-5" />
                             </a>
                         ))}
