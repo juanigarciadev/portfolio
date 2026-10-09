@@ -64,11 +64,11 @@ const AboutMe = () => {
     const socials = SOCIALS.filter((social) => social.title !== "Contact me");
 
     return (
-        <section ref={ref} className="relative min-h-screen overflow-hidden px-8 pb-24 pt-40 lg:pt-32 md:px-4">
+        <section ref={ref} id="top" className="relative min-h-screen overflow-hidden pb-24 pt-40 lg:pt-32">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#03082b_1px,transparent_1px),linear-gradient(to_bottom,#03082b_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,#000_70%,transparent_100%)]" />
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_45%_40%_at_75%_45%,rgba(167,139,250,0.16),transparent)] lg:bg-[radial-gradient(ellipse_70%_35%_at_50%_70%,rgba(167,139,250,0.14),transparent)]" />
 
-            <div className="relative z-10 mx-auto grid min-h-[calc(100vh-14rem)] max-w-6xl grid-cols-2 items-center gap-12 lg:min-h-0 lg:grid-cols-1 lg:gap-16">
+            <div className="container-page relative z-10 grid min-h-[calc(100vh-14rem)] grid-cols-2 items-center gap-12 lg:min-h-0 lg:grid-cols-1 lg:gap-16">
                 <motion.div style={{ y: textY, opacity: textOpacity }} className="flex flex-col items-start gap-6 lg:items-center lg:text-center">
                     <span className="inline-flex items-center gap-2 rounded-full border border-cardBorder bg-light px-4 py-1.5 text-xs uppercase tracking-widest">
                         <span className="relative flex size-2">

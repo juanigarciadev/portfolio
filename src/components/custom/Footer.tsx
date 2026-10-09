@@ -1,21 +1,41 @@
 import React from "react";
+import Link from "next/link";
 import { SOCIALS } from "@/lib/mocks";
+
+const FOOTER_LINKS = [
+    { label: "About", href: "/#aboutMe" },
+    { label: "Experience", href: "/#experience" },
+    { label: "Work", href: "/#work" },
+    { label: "Contact", href: "/#contact" },
+];
 
 const Footer = () => {
     return (
-        <footer
-        className="relative w-full h-auto bg-main py-8 px-96 xl:px-8 lg:px-4 sm:px-2">
-            <div className="w-full h-auto bg-light border border-cardBorder rounded-lg">
-                <div className="flex items-center justify-between w-full p-4 md:flex-col md:gap-4">
-                    <span className="text-md tracking-widest">Everything, made with love. Always.</span>
-                    <div className="flex gap-4 sm:gap-2">
-                        {SOCIALS.map((social)=>{
-                            return(
-                                <a href={social.url} target="_blank" rel="noopener noreferrer" aria-label={social.title} key={social.title} className="bg-main border border-cardBorder p-2 rounded-lg cursor-pointer hover:bg-light transition-all"><social.icon className='size-6'/></a>
-                            )
-                        })}
+        <footer className="relative w-full border-t border-cardBorder bg-main">
+            <div className="container-page flex flex-col gap-10 py-12">
+                <div className="grid grid-cols-3 items-start gap-8 md:grid-cols-1">
+                    <div className="flex flex-col gap-3">
+                        <span className="title text-2xl font-semibold tracking-wide">juanigarciadev<span className="text-corporative">.</span></span>
+                        <p className="max-w-xs text-neutral-300">Frontend developer from Argentina. Everything, made with love. Always.</p>
+                    </div>
+                    <nav>
+                        <ul className="flex flex-col gap-2">
+                            {FOOTER_LINKS.map(({ label, href }) => (
+                                <li key={href}>
+                                    <Link href={href} className="text-neutral-300 transition-colors hover:text-corporative">{label}</Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
+                    <div className="flex gap-3 justify-self-end md:justify-self-start">
+                        {SOCIALS.map((social) => (
+                            <a href={social.url} target="_blank" rel="noopener noreferrer" aria-label={social.title} key={social.title} className="rounded-xl border border-cardBorder bg-light p-3 transition-all hover:-translate-y-0.5 hover:border-corporative/40">
+                                <social.icon className="size-5" />
+                            </a>
+                        ))}
                     </div>
                 </div>
+                <span className="text-xs uppercase tracking-widest text-neutral-500">© {new Date().getFullYear()} Juan Ignacio García</span>
             </div>
         </footer>
     );

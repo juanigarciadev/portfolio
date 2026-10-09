@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Fragment } from "react";
-import { TechIcon } from "@/components/custom/TechIcon";
 import ArrowLeft from "@/components/icons/ArrowLeft";
 import { FadeIn } from "@/components/custom/FadeIn";
+import { TechIcon } from "@/components/custom/TechIcon";
 import { PROJECTS, getProject } from "@/lib/mocks";
 
 type Params = { slug: string };
@@ -39,15 +39,26 @@ const renderText = (text: string) =>
         );
     });
 
+const BrowserFrame = ({ children }: { children: React.ReactNode }) => (
+    <div className="overflow-hidden rounded-xl border border-cardBorder bg-light shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)]">
+        <div className="flex items-center gap-2 border-b border-cardBorder bg-main px-4 py-3">
+            <span className="size-2.5 rounded-full bg-neutral-700" />
+            <span className="size-2.5 rounded-full bg-neutral-700" />
+            <span className="size-2.5 rounded-full bg-neutral-700" />
+        </div>
+        {children}
+    </div>
+);
+
 const ImagePlaceholder = ({ label }: { label: string }) => (
-    <div className="flex h-96 w-full flex-col items-center justify-center gap-2 rounded border border-dashed border-cardBorder bg-light text-center text-neutral-300">
+    <div className="flex h-96 w-full flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-cardBorder bg-light text-center text-neutral-300">
         <span className="text-xs tracking-widest uppercase">Image pending</span>
         <span>{label}</span>
     </div>
 );
 
-const secondaryButton = "font-semibold border border-cardBorder px-8 py-2 rounded hover:bg-light transition-all 2xl:w-full 2xl:text-center lg:p-4";
-const primaryButton = "text-corporativeDark font-semibold bg-corporative border border-cardBorder px-8 py-2 rounded hover:bg-corporativeDark transition-all hover:text-corporativeLight 2xl:w-full 2xl:text-center lg:p-4";
+const secondaryButton = "inline-flex items-center gap-2 rounded-full border border-cardBorder bg-black px-8 py-2.5 font-semibold transition-all hover:border-corporative hover:bg-light";
+const primaryButton = "inline-flex items-center gap-2 rounded-full border border-cardBorder bg-corporative px-8 py-2.5 font-semibold text-corporativeDark transition-all hover:bg-corporativeDark hover:text-corporativeLight";
 
 export default function ProjectPage({ params }: { params: Params }) {
     const project = getProject(params.slug);
@@ -58,52 +69,72 @@ export default function ProjectPage({ params }: { params: Params }) {
     const hasBlockTitles = blocks.some((block) => block.title);
 
     return (
-        <main className="text-lg flex flex-col bg-main gap-16 w-full px-96 mt-28 xl:px-8 lg:px-4 sm:px-2">
-            <FadeIn y="0px" className="flex flex-col gap-10">
-                <Link href="/" className="inline-flex items-center gap-2 font-semibold w-fit border border-cardBorder px-8 py-2 rounded hover:bg-light transition-all 2xl:w-full 2xl:text-center lg:p-4">
-                    <ArrowLeft />Return to home
+        <main className="container-page flex flex-col gap-12 pb-24 pt-32 md:pt-28">
+            <FadeIn y="0px" className="flex flex-col gap-8">
+                <Link href="/#work" className="inline-flex w-fit items-center gap-2 rounded-full border border-cardBorder px-5 py-2 text-sm transition-all hover:border-corporative hover:bg-light">
+                    <ArrowLeft className="size-4" />All projects
                 </Link>
-                {!imageUrl && <ImagePlaceholder label={`${name} preview`} />}
-                {imageUrl && (
-                    <div
-                        role="img"
-                        aria-label={`${name} preview`}
-                        style={{ backgroundImage: `url(${imageUrl})` }}
-                        className="h-96 w-full rounded bg-cover hover:bg-bottom hover:duration-1000 [&:not(:hover)]:bg-top [&:not(:hover)]:duration-1000"
-                    />
-                )}
-            </FadeIn>
-            <FadeIn className="flex flex-col gap-4">
-                <span className="text-xs tracking-widest uppercase">{context}</span>
-                <h1 className="title text-corporative text-6xl font-semibold tracking-wide md:text-5xl">{name}</h1>
-                <p className="flex">{description}</p>
-                <div className="flex flex-wrap gap-2 items-center">
-                    {technologies.map((technology) => <TechIcon key={technology.name} technology={technology} size="md" />)}
-                </div>
-                {(repositoryUrl || websiteUrl) && (
-                    <div className="flex gap-4 lg:flex-col">
-                        {repositoryUrl && <a href={repositoryUrl} target="_blank" rel="noopener noreferrer" className={secondaryButton}>Visit Repository</a>}
-                        {websiteUrl && <a href={websiteUrl} target="_blank" rel="noopener noreferrer" className={primaryButton}>Open Live Site</a>}
-                    </div>
-                )}
-            </FadeIn>
-            <section className={`flex flex-col pb-16 ${hasBlockImages ? "gap-16" : hasBlockTitles ? "gap-12" : "gap-6"}`}>
-                {blocks.map(({ title, text, bullets, image, placeholder }, i) => (
-                    <FadeIn key={i} className={`flex flex-col ${image || placeholder ? "gap-16" : "gap-6"}`}>
-                        <div className="flex flex-col gap-4">
-                            {title && <h2 className="title text-3xl text-corporative font-semibold tracking-wide md:text-2xl">{title}</h2>}
-                            <p>{renderText(text)}</p>
-                            {bullets && (
-                                <ul className="flex list-disc flex-col gap-2 pl-6 text-neutral-300 marker:text-corporative">
-                                    {bullets.map((bullet, j) => <li key={j}>{renderText(bullet)}</li>)}
-                                </ul>
-                            )}
+                <div className="flex flex-col gap-5">
+                    <span className="eyebrow">{context}</span>
+                    <h1 className="title text-7xl font-semibold tracking-wide text-corporative md:text-5xl">{name}</h1>
+                    <p className="max-w-3xl text-xl text-neutral-300">{description}</p>
+                    {(repositoryUrl || websiteUrl) && (
+                        <div className="flex flex-wrap gap-3 pt-2">
+                            {websiteUrl && <a href={websiteUrl} target="_blank" rel="noopener noreferrer" className={primaryButton}>Open Live Site<ArrowLeft className="rotate-[135deg] fill-[#2a1e50]" /></a>}
+                            {repositoryUrl && <a href={repositoryUrl} target="_blank" rel="noopener noreferrer" className={secondaryButton}>Visit Repository</a>}
                         </div>
-                        {!image && placeholder && <ImagePlaceholder label={placeholder} />}
-                        {image && <img src={image.src} alt={image.alt} loading="lazy" decoding="async" className="rounded" />}
-                    </FadeIn>
-                ))}
-            </section>
+                    )}
+                </div>
+            </FadeIn>
+
+            <FadeIn>
+                {imageUrl ? (
+                    <BrowserFrame>
+                        <img src={imageUrl} alt={`${name} preview`} className="max-h-[36rem] w-full object-cover object-top" />
+                    </BrowserFrame>
+                ) : (
+                    <ImagePlaceholder label={`${name} preview`} />
+                )}
+            </FadeIn>
+
+            <div className="grid grid-cols-[1fr_280px] gap-16 lg:grid-cols-1 lg:gap-12">
+                <section className={`flex flex-col ${hasBlockImages ? "gap-16" : hasBlockTitles ? "gap-12" : "gap-6"}`}>
+                    {blocks.map(({ title, text, bullets, image, placeholder }, i) => (
+                        <FadeIn key={i} className={`flex flex-col ${image || placeholder ? "gap-10" : "gap-6"}`}>
+                            <div className="flex flex-col gap-4">
+                                {title && <h2 className="title text-3xl font-semibold tracking-wide text-corporative md:text-2xl">{title}</h2>}
+                                <p className="text-lg leading-relaxed text-neutral-200">{renderText(text)}</p>
+                                {bullets && (
+                                    <ul className="flex list-disc flex-col gap-2 pl-6 text-lg text-neutral-300 marker:text-corporative">
+                                        {bullets.map((bullet, j) => <li key={j}>{renderText(bullet)}</li>)}
+                                    </ul>
+                                )}
+                            </div>
+                            {!image && placeholder && <ImagePlaceholder label={placeholder} />}
+                            {image && (
+                                <BrowserFrame>
+                                    <img src={image.src} alt={image.alt} loading="lazy" decoding="async" className="w-full" />
+                                </BrowserFrame>
+                            )}
+                        </FadeIn>
+                    ))}
+                </section>
+
+                <aside className="flex flex-col gap-6 self-start lg:order-first lg:static sticky top-28">
+                    <div className="flex flex-col gap-3 rounded-2xl border border-cardBorder bg-light p-6">
+                        <span className="eyebrow">Context</span>
+                        <span className="text-lg">{context}</span>
+                    </div>
+                    <div className="flex flex-col gap-4 rounded-2xl border border-cardBorder bg-light p-6">
+                        <span className="eyebrow">Stack</span>
+                        <div className="flex flex-wrap gap-2">
+                            {technologies.map((technology) => (
+                                <TechIcon key={technology.name} technology={technology} size="md" />
+                            ))}
+                        </div>
+                    </div>
+                </aside>
+            </div>
         </main>
     );
 }

@@ -1,54 +1,58 @@
 "use client"
 import React from "react"
 import Link from "next/link"
-import {motion} from 'framer-motion'
+import { SpotlightCard } from "../ui/SpotlightCard"
+import { SectionHeading } from "../ui/SectionHeading"
+import { FadeIn } from "./FadeIn"
+
+const RELATED_PROJECTS = [
+    { label: "Brodaverso", href: "/projects/brodaverso" },
+    { label: "Grupo Broda website", href: "/projects/grupo-broda-website" },
+    { label: "Alma Chacras", href: "/projects/alma-chacras" },
+];
 
 const Experience = () => {
     return(
-        <motion.section
-        initial={{opacity: 0, y: '20px'}}
-        whileInView={{opacity: 1, y: '0px'}}
-        transition={{duration: 0.3}}
-        viewport={{ once: true, amount: 0.2 }}
-        className="flex flex-col bg-main gap-16 w-full px-96 xl:px-8 lg:px-4 sm:px-2 mb-64 md:mb-32">
-            <h2 className="text-6xl title text-center font-semibold tracking-wide md:text-5xl">
-                My <span className="text-corporative font-semibold">experience</span>
-            </h2>
-            <article className="inline-flex gap-4 lg:flex-col">
-                <motion.div
-                initial={{opacity: 0, x: '-20px'}}
-                whileInView={{opacity: 1, x: '0px'}}
-                transition={{duration: 0.3}}
-                viewport={{ once: true, amount: 0.6 }}
-                className="inline-flex flex-col gap-4 items-center lg:items-start">
-                    <img src="https://res.cloudinary.com/diruiumfk/image/upload/v1739851387/grupobroda-logo_pl5yx3.jpg" alt="Grupo Broda logo" className="min-w-16 w-16 rounded"/>
-                    <span className="w-[3px] h-[calc(100%+50px)] bg-gradient-to-b from-neutral-300/10 via-neutral-300/10 to-neutral-300/0 lg:hidden -mt-6"></span>
-                </motion.div>
-                <motion.div
-                initial={{opacity: 0, x: '20px'}}
-                whileInView={{opacity: 1, x: '0px'}}
-                transition={{duration: 0.3}}
-                viewport={{ once: true, amount: 0.6 }}
-                className="text-lg pb-10 inline-flex flex-col gap-2">
-                    <a href="https://grupobroda.com/" target="_blank" rel="noopener noreferrer" className="title text-4xl text-corporative md:text-3xl hover:underline">Grupo Broda</a>
-                    <div>
-                        <h3>IT Analyst - Management control</h3>
-                        <span>Feb. 2025 - At present</span>
+        <section className="container-page flex scroll-mt-24 flex-col gap-12 py-24 md:py-16" id="experience">
+            <FadeIn>
+                <SectionHeading eyebrow="Experience">
+                    My <span className="text-corporative">experience</span>
+                </SectionHeading>
+            </FadeIn>
+            <FadeIn>
+                <div className="relative flex gap-6 md:gap-4">
+                    <div className="flex flex-col items-center">
+                        <span className="mt-8 size-3 rounded-full bg-corporative shadow-[0_0_0_6px_rgba(167,139,250,0.15)]" />
+                        <span className="mt-2 w-px flex-1 bg-gradient-to-b from-corporative/40 to-transparent" />
                     </div>
-                    <div>
-                        <p className="text-neutral-300">
-                            I work as an IT Analyst where I apply my knowledge in multiple technologies and train in others. I am part of the management control team. I am mainly responsible for the maintenance and design of systems and web pages related to the company.
-                        </p>
-                        <p className="text-neutral-300 pt-4">
-                            Related projects:{" "}
-                            <Link href="/projects/brodaverso" className="text-corporative font-semibold hover:underline">Brodaverso</Link>,{" "}
-                            <Link href="/projects/grupo-broda-website" className="text-corporative font-semibold hover:underline">Grupo Broda website</Link> and{" "}
-                            <Link href="/projects/alma-chacras" className="text-corporative font-semibold hover:underline">Alma Chacras</Link>.
-                        </p>
-                    </div>
-                </motion.div>
-            </article>
-        </motion.section>
+                    <SpotlightCard className="flex-1">
+                        <div className="relative z-10 flex flex-col gap-6 p-8 md:p-6">
+                            <div className="flex items-start justify-between gap-6 md:flex-col">
+                                <div className="flex items-center gap-4">
+                                    <img src="https://res.cloudinary.com/diruiumfk/image/upload/v1739851387/grupobroda-logo_pl5yx3.jpg" alt="Grupo Broda logo" className="size-16 min-w-16 rounded-xl"/>
+                                    <div className="flex flex-col">
+                                        <a href="https://grupobroda.com/" target="_blank" rel="noopener noreferrer" className="title text-3xl font-semibold text-corporative hover:underline md:text-2xl">Grupo Broda</a>
+                                        <span className="text-lg">IT Analyst - Management control</span>
+                                    </div>
+                                </div>
+                                <span className="shrink-0 rounded-full border border-cardBorder bg-main px-4 py-1.5 text-xs uppercase tracking-widest text-neutral-300">Feb. 2025 - At present</span>
+                            </div>
+                            <p className="max-w-3xl text-lg text-neutral-300">
+                                I work as an IT Analyst where I apply my knowledge in multiple technologies and train in others. I am part of the management control team. I am mainly responsible for the maintenance and design of systems and web pages related to the company.
+                            </p>
+                            <div className="flex flex-wrap items-center gap-2">
+                                <span className="mr-2 text-xs uppercase tracking-widest text-neutral-400">Related projects</span>
+                                {RELATED_PROJECTS.map(({ label, href }) => (
+                                    <Link key={href} href={href} className="rounded-full border border-cardBorder bg-main px-4 py-1.5 text-sm transition-all hover:border-corporative hover:text-corporative">
+                                        {label}
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+                    </SpotlightCard>
+                </div>
+            </FadeIn>
+        </section>
     )
 }
 

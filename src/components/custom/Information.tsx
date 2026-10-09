@@ -3,9 +3,11 @@ import Link from "next/link";
 import React from "react";
 import Github from "../icons/Github";
 import ArrowLeft from "../icons/ArrowLeft";
+import { SpotlightCard } from "../ui/SpotlightCard";
+import { SectionHeading } from "../ui/SectionHeading";
 import { TechIcon } from "./TechIcon";
+import { FadeIn } from "./FadeIn";
 import { TECHNOLOGIES } from "@/lib/mocks";
-import {motion} from 'framer-motion'
 
 const MAIN_STACK = [
     TECHNOLOGIES.REACTJS,
@@ -22,57 +24,79 @@ const MAIN_STACK = [
 
 const Information = () => {
     return(
-        <motion.div
-        initial={{opacity: 0, y: '20px'}}
-        whileInView={{opacity: 1, y: '0px'}}
-        transition={{duration: 0.3}}
-        viewport={{ once: true, amount: 0.2 }}
-        className="flex flex-col bg-main gap-16 w-full px-96 xl:px-16 lg:px-8 md:pb-32 sm:px-2 h-auto scroll-mt-24" id="aboutMe">
-            <div className="grid grid-rows-2 gap-4 md:flex md:flex-col">
-                <div className="grid grid-cols-2 w-full h-[600px] rounded gap-4 md:flex md:flex-col md:h-auto">
-                    <div className="inline-flex items-end rounded border border-cardBorder bg-light p-4 bg-[bottom_10rem_right_-10rem] bg-contain bg-no-repeat bg-[url('https://res.cloudinary.com/diruiumfk/image/upload/v1732066935/blossomuibackground_lcnotm.png')] md:min-h-[16rem]">
-                        <span className="title text-wrap text-3xl font-semibold tracking-wide md:text-2xl">Always improving to make stunning sites.</span>
-                    </div>
-                    <div className="w-full grid grid-rows-2 gap-4 rounded md:flex md:flex-col">
-                        <div className="flex flex-col gap-4 w-full rounded border border-cardBorder bg-light p-4 bg-no-repeat bg-[bottom_-5rem_right_-10rem] bg-contain bg-[url('https://res.cloudinary.com/diruiumfk/image/upload/v1732063669/components_d52jfz.png')]">
-                        <div className="flex flex-col gap-2">
-                            <span className="z-10 text-xs tracking-widest">WHAT I'M DOING</span>
-                            <span className="title text-wrap text-3xl font-semibold tracking-wide md:text-2xl">Currently building a free-to-use Tailwind components library.</span>
+        <section className="container-page flex scroll-mt-24 flex-col gap-12 py-24 md:py-16" id="aboutMe">
+            <FadeIn>
+                <SectionHeading eyebrow="About me">
+                    Always improving to make <span className="text-corporative">stunning</span> sites.
+                </SectionHeading>
+            </FadeIn>
+            <div className="grid grid-cols-3 gap-4 lg:grid-cols-2 md:grid-cols-1">
+                <FadeIn className="col-span-2 lg:col-span-2 md:col-span-1">
+                    <SpotlightCard className="h-full">
+                        <div className="relative z-10 flex h-full flex-col justify-between gap-12 p-8 md:p-6">
+                            <span className="eyebrow">More about me</span>
+                            <p className="title text-4xl font-semibold leading-tight tracking-wide md:text-3xl">
+                                Curious and creative front-end developer focused on creating <span className="text-corporative">useful, fun and friendly</span> experiences.
+                            </p>
                         </div>
-                            <Link href='/projects/BlossomUI' className="flex items-center gap-2 font-semibold w-fit border border-cardBorder bg-black rounded px-8 py-2 hover:bg-light transition-all md:text-xs md:w-full md:justify-center">More information</Link>
-                        </div>
-                        <div className="grid grid-cols-2 gap-4 rounded md:grid-cols-1">
-                            <div className="inline-flex items-center justify-center rounded border border-cardBorder bg-light md:py-6">
-                                <img className="rounded w-40" src="https://res.cloudinary.com/diruiumfk/image/upload/v1732068941/Flag_of_Argentina.svg_m9olkc.png" alt="argentinian flag" />
-                            </div>
-                            <div className="flex flex-col gap-4 rounded border border-cardBorder bg-light relative p-4">
-                                <span className="title text-wrap text-3xl font-semibold tracking-wide md:text-2xl">Main stack</span>
-                                <div className="flex flex-wrap gap-2">
-                                    {MAIN_STACK.map((technology) => (
-                                        <TechIcon key={technology.name} technology={technology} size="md" />
-                                    ))}
-                                </div>
+                    </SpotlightCard>
+                </FadeIn>
+
+                <FadeIn>
+                    <SpotlightCard className="h-full">
+                        <div className="relative z-10 flex h-full flex-col justify-between gap-8 p-8 md:p-6">
+                            <img className="w-24 rounded" src="https://res.cloudinary.com/diruiumfk/image/upload/v1732068941/Flag_of_Argentina.svg_m9olkc.png" alt="argentinian flag" />
+                            <div className="flex flex-col gap-1">
+                                <span className="eyebrow">Based in</span>
+                                <span className="title text-3xl font-semibold tracking-wide">Argentina</span>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div className="w-full grid grid-cols-4 h-[292px] gap-4 rounded md:flex md:flex-col md:w-full md:h-auto">
-                    <div className="inline-flex items-center col-span-3 rounded border border-cardBorder bg-light p-4">
-                        <div className="flex flex-col gap-2">
-                            <span className="z-10 text-xs tracking-widest">MORE ABOUT ME</span>
-                            <span className="title text-wrap text-3xl font-semibold tracking-wide md:text-2xl">Curious and creative front-end developer focused in creating useful, fun and friendly experiences.
+                    </SpotlightCard>
+                </FadeIn>
+
+                <FadeIn className="lg:col-span-2 md:col-span-1">
+                    <SpotlightCard className="h-full">
+                        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden rounded-[inherit]">
+                            <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/diruiumfk/image/upload/v1732063669/components_d52jfz.png')] bg-contain bg-no-repeat bg-[bottom_-6rem_right_-9rem] opacity-50 transition-opacity duration-300 group-hover/spot:opacity-80" />
+                        </div>
+                        <div className="relative z-10 flex h-full flex-col gap-6 p-8 md:p-6">
+                            <div className="flex flex-col gap-3">
+                                <span className="eyebrow">What I'm doing</span>
+                                <span className="title text-2xl font-semibold leading-snug tracking-wide">Currently building a free-to-use Tailwind components library.</span>
+                            </div>
+                            <Link href="/projects/BlossomUI" className="mt-auto inline-flex w-fit items-center gap-2 rounded-full border border-cardBorder bg-black px-6 py-2 font-semibold transition-all hover:border-corporative hover:bg-light">
+                                More information
+                                <ArrowLeft className="rotate-180" />
+                            </Link>
+                        </div>
+                    </SpotlightCard>
+                </FadeIn>
+
+                <FadeIn className="lg:col-span-2 md:col-span-1">
+                    <SpotlightCard className="h-full">
+                        <div className="relative z-10 flex h-full flex-col gap-6 p-8 md:p-6">
+                            <span className="eyebrow">Main stack</span>
+                            <div className="flex flex-wrap gap-3">
+                                {MAIN_STACK.map((technology) => (
+                                    <TechIcon key={technology.name} technology={technology} size="md" side="top" />
+                                ))}
+                            </div>
+                        </div>
+                    </SpotlightCard>
+                </FadeIn>
+
+                <FadeIn className="lg:col-span-2 md:col-span-1">
+                    <SpotlightCard className="h-full">
+                        <Link href="https://github.com/juanigarciadev" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" className="relative z-10 flex h-full min-h-[12rem] items-center justify-center p-8">
+                            <Github className="size-24 transition-transform duration-300 group-hover/spot:scale-90" />
+                            <span className="absolute bottom-4 right-4 flex size-10 items-center justify-center rounded-full border border-cardBorder bg-main transition-all duration-300 group-hover/spot:border-corporative group-hover/spot:bg-corporative">
+                                <ArrowLeft className="rotate-[135deg] transition-colors duration-300 group-hover/spot:fill-[#2a1e50]" />
                             </span>
-                        </div>
-                    </div>
-                    <Link href={'https://github.com/juanigarciadev'} target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" className="relative group flex items-center justify-center rounded border border-cardBorder bg-light cursor-pointer hover:bg-main md:py-8">
-                        <Github className='size-32 group-hover:size-28 duration-100 md:size-24 md:group-hover:size-24'/>
-                        <div className="absolute bg-black right-3 bottom-3 bg-opacity-80 border border-cardBorder p-2 rounded-lg cursor-pointer group-hover:bg-light transition-all">
-                            <ArrowLeft className='rotate-[135deg]'/>
-                        </div>
-                    </Link>
-                </div>
+                        </Link>
+                    </SpotlightCard>
+                </FadeIn>
             </div>
-        </motion.div>
+        </section>
     )
 }
 
