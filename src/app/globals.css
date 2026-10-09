@@ -14,7 +14,7 @@
 
 @font-face {
   font-family: 'Nohemi';
-  src: url('../../public/fonts/Nohemi-Regular.woff') format('woff2');
+  src: url('../../public/fonts/Nohemi-Regular.woff') format('woff');
   font-display: swap;
   font-weight: normal;
   font-style: normal;
@@ -22,7 +22,7 @@
 
 @font-face {
   font-family: 'Nohemi-Medium';
-  src: url('../../public/fonts/Nohemi-Medium.woff') format('woff2');
+  src: url('../../public/fonts/Nohemi-Medium.woff') format('woff');
   font-display: swap;
   font-weight: normal;
   font-style: normal;
@@ -47,6 +47,23 @@
 
 .anchorText {
   @apply text-lg inline-flex gap-2 px-8 py-2 cursor-pointer hover:bg-neutral-300 hover:bg-opacity-10 hover:rounded transition-all select-none md:px-4 md:py-0 md:hover:bg-transparent
+}
+
+.container-page {
+  @apply mx-auto w-full max-w-6xl px-8 md:px-4
+}
+
+.eyebrow {
+  @apply inline-flex items-center gap-3 text-xs uppercase tracking-widest text-neutral-300
+}
+
+.eyebrow::before {
+  content: '';
+  @apply h-px w-8 bg-corporative
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 @media (prefers-color-scheme: dark) {

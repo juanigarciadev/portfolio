@@ -6,16 +6,22 @@ import { cn } from "@/lib/utils";
 export const TextGenerateEffect = ({
   words,
   className,
+  wordClassName = "text-6xl md:text-5xl",
+  highlight = [0, 2],
   filter = true,
   duration = 0.3,
 }: {
   words: string;
   className?: string;
+  /** Clases de tamaño aplicadas a cada palabra. */
+  wordClassName?: string;
+  /** Índices de las palabras resaltadas con el color corporativo. */
+  highlight?: number[];
   filter?: boolean;
   duration?: number;
 }) => {
   const [scope, animate] = useAnimate();
-  let wordsArray = words.split(" ");
+  const wordsArray = words.split(" ");
   useEffect(() => {
     animate(
       "span",
@@ -37,7 +43,7 @@ export const TextGenerateEffect = ({
           return (
             <motion.span
               key={word + idx}
-              className={`${idx === 0 || idx === 2 ? 'text-corporative text-6xl md:text-5xl' : 'text-white text-6xl md:text-5xl'} opacity-0`}
+              className={`${highlight.includes(idx) ? "text-corporative" : "text-white"} ${wordClassName} opacity-0`}
               style={{
                 filter: filter ? "blur(10px)" : "none",
               }}
