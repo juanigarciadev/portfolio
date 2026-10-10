@@ -254,7 +254,7 @@ export const PROJECTS: Project[] = [
         blocks: [
             {
                 text: "BlossomUI is a free and open source library of React components written in TypeScript and styled with Tailwind CSS. It is not an npm package: every component is a single file with typed props that you copy into your project and own. There are 21 components, from buttons, forms and modals to toasts, pagination and steppers. This project seeks to help anyone who wants to follow a design scheme without breaking their head too much (because someone has already broken it before). Its use is completely free and non-profit.",
-                image: { src: "/images/blossomui/componentes.jpg", alt: "Components gallery of BlossomUI with previews of alerts, avatars, badges, banners, buttons and cards" },
+                image: { src: "/images/blossomui/componentes.jpg", alt: "Components gallery of BlossomUI with previews of accordion, alerts, avatar, badges, banner and breadcrumb" },
             },
             {
                 title: "Version 2: rewritten in TypeScript",
@@ -266,7 +266,7 @@ export const PROJECTS: Project[] = [
                     "Select, MultiSelect, Checkbox and Radio are custom, so no native form controls are used.",
                     "One component with props instead of one export per variant: a Button takes a color and a rounded prop instead of needing a separate RedButtonRounded.",
                 ],
-                image: { src: "/images/blossomui/codigo.jpg", alt: "Modal documentation page showing the typed props of the component and a live example" },
+                image: { src: "/images/blossomui/codigo.jpg", alt: "Modal documentation page with a live dialog opened over the component docs" },
             },
             {
                 title: "Documentation that teaches",
@@ -288,7 +288,7 @@ export const PROJECTS: Project[] = [
             },
             {
                 text: "Being open source, anyone can review it and submit their PRs to add, improve or correct any element, and a changelog tracks every notable change since the first release.",
-                image: { src: "/images/blossomui/changelog.jpg", alt: "Changelog page listing the changes of version 2.0.0" },
+                image: { src: "/images/blossomui/changelog.jpg", alt: "Changelog page listing the changes of version 2.1.0" },
             },
         ],
     },

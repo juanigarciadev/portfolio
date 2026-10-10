@@ -43,7 +43,7 @@ const FloatingItem = ({ scroll, range, rotate = 0, delay = 0, className, childre
 const FEATURED_CARDS = [
     { slug: "meal-management", className: "left-[46%] top-[0%] w-[52%] z-10", range: [0, -150] as [number, number], rotate: -3, delay: 0 },
     { slug: "brodaverso", className: "left-[0%] top-[24%] w-[62%] z-20", range: [0, 40] as [number, number], rotate: 4, delay: 0.3 },
-    { slug: "grupo-broda-website", className: "left-[48%] top-[46%] w-[50%] z-10", range: [0, -70] as [number, number], rotate: -2, delay: 0.6 },
+    { slug: "BlossomUI", className: "left-[48%] top-[46%] w-[50%] z-10", range: [0, -70] as [number, number], rotate: -2, delay: 0.6 },
 ];
 
 const STACK_DOCK = [

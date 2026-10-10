@@ -28,7 +28,7 @@ const Information = () => {
                 <div className="grid h-[600px] grid-cols-2 gap-4 md:flex md:h-auto md:flex-col">
                     <SpotlightCard>
                         <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden rounded-[inherit]">
-                            <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/diruiumfk/image/upload/v1732066935/blossomuibackground_lcnotm.png')] bg-contain bg-no-repeat bg-[position:bottom_10rem_right_-10rem] opacity-60 transition-opacity duration-300 group-hover/spot:opacity-90 md:bg-[length:100%] md:bg-[position:center_4rem] md:opacity-60" />
+                            <div className="absolute inset-0 bg-[url('/images/blossomui/dark.jpg')] bg-contain bg-no-repeat bg-[position:bottom_10rem_right_-10rem] opacity-60 transition-opacity duration-300 group-hover/spot:opacity-90 md:bg-[length:100%] md:bg-[position:center_4rem] md:opacity-60" />
                         </div>
                         <div className="relative z-10 flex h-full flex-col justify-between gap-12 p-8 md:min-h-[26rem] md:p-6">
                             <span className="eyebrow">About me</span>
